@@ -13,72 +13,183 @@
     <script>
       if (location.host === "osyoyu.github.io") { location.host = "regional.rubykaigi.org"; }
     </script>
-    <style>body { font-family: "Helvetica Neue", Helvetica, sans-serif; }</style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css" />
+
     <title>東京Ruby会議12</title>
   </head>
   <body>
-    <h1>東京Ruby会議12 / Tokyo RubyKaigi 12</h1>
-    <h2>2025/1/18 - Save the date!</h2>
-    <p>
-      <a href="https://salvia.hall-info.jp/">鶴見区民文化センター「サルビアホール」</a> (Tsurumi Cultural Center (Salvia Hall))<br />
-    </p>
-    <p>Point of Contact: Daisuke Aritomo (osyoyu) / <a href="mailto:tokyorubykaigi12@googlegroups.com">tokyorubykaigi12@googlegroups.com</a></p>
-    <p><a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=MnFzY2VybHFpcTFhZXBidnZjcTBnYjRqMzQgZWZhZDRiNjA0YTM5NmVkNjY3NmYzMmEzOGJiMjU2ZGZjZjAwYWJiMmIzMTIzMDRiM2QxODM4YTliMTdkY2IwZUBn&amp;tmsrc=efad4b604a396ed6676f32a38bb256dfcf00abb2b312304b3d1838a9b17dcb0e%40group.calendar.google.com">Add to Google Calendar</a></p>
+    <header>
+      <div class="logo">
+        <img src="./img/primary_logo_red.png" alt="Tokyo RubyKaigi 12" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="./policy.html">Policy</a></li>
+          <li><a href="https://salvia.hall-info.jp/about/#access" target="_blank">Access</a></li>
+          <li><a href="https://x.com/tokyork12" target="_blank"><img src="./img/x-logo-black.png" width="24" height="24" /></a>
+        </ul>
+      </nav>
+    </header>
 
-    <ul>
-      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSerCXJf1Sltik2lv2SW5ttdRV1xgiSVeW0K2BARthSNhuVZcA/viewform">発表の募集フォーム</a></li>
-      <li><a href="https://tokyorubykaigi12.s3.ap-northeast-1.amazonaws.com/tokyorubykaigi12-sponsorship-prospectus.pdf">スポンサーシップ募集要項</a></li>
-      <li><a href="policy.html">ポリシー</a></li>
-    </ul>
+    <div class="hero">
+      <div class="hero-inner">
+        <h1>
+          <img src="./img/primary_logo_white.png" alt="Tokyo RubyKaigi 12" class="primary-logo" />
+        </h1>
 
-    <hr />
+        <div style="margin-bottom: 16px;">
+          <div class="datetime">2025.1.18 (Sat)</div>
+          <div class="location">横浜市鶴見区民文化センター サルビアホール</div>
+          <div class="organizing-team">主催：東京Ruby会議12実行委員会</div>
+        </div>
 
-    <h2>NEWS</h2>
-    <ul>
-      <li>2024/9/30 <a href="https://tokyorubykaigi12.s3.ap-northeast-1.amazonaws.com/tokyorubykaigi12-sponsorship-prospectus.pdf">スポンサーシップ募集要項</a>を更新しました。<br />募集枠に限りのありますRuby, Goldプランについて、先着順を取りやめ、申込み多数の場合抽選を実施する形式に変更いたしました。申込みの締め切りは 10/22 となります。</li>
-      <li>2024/9/29 <a href="https://docs.google.com/forms/d/e/1FAIpQLSerCXJf1Sltik2lv2SW5ttdRV1xgiSVeW0K2BARthSNhuVZcA/viewform">発表の募集</a>を開始しました。</li>
-      <li>2024/9/24 <a href="https://tokyorubykaigi12.s3.ap-northeast-1.amazonaws.com/tokyorubykaigi12-sponsorship-prospectus.pdf">スポンサーシップ募集要項</a>を公開しました<br /><strike>お申込みは10/1 15:00からになります。</strike>Ruby, Goldプランには枠に限りがあり、<strong>先着順</strong>とさせていただきます。詳しくは募集要項をご覧ください。<br /><strong>追記 (2024/9/26)</strong>: 募集開始日時について、後ろ倒しする方向で検討しております。確定次第本サイトおよび <a href="https://x.com/tokyork12">@tokyork12</a> にてお知らせします。</li>
-      <li>2024/8/31 Twitterアカウント <a href="https://x.com/tokyork12">@tokyork12</a> をよろしくお願いします</li>
-      <li>2024/8/5 東京Ruby会議12 Webサイト公開！</li>
-    </ul>
+        <div class="actions" style="margin-bottom: 28px;">
+          <a class="trk12-button buy-a-ticket">チケット購入 (2024.10.15 OPEN)</a>
+        </div>
 
-    <hr />
+        <div>
+          <img src="./img/tri.png" alt="" />
+        </div>
+      </div> <!-- /hero-inner -->
+    </div> <!-- /hero -->
 
-    <h2>東京Ruby会議12について</h2>
+    <div class="internav">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSerCXJf1Sltik2lv2SW5ttdRV1xgiSVeW0K2BARthSNhuVZcA/viewform" target="_blank" class="trk12-button">
+        発表を応募する
+      </a>
+      <a href="https://tokyorubykaigi12.s3.ap-northeast-1.amazonaws.com/tokyorubykaigi12-sponsorship-prospectus.pdf" target="_blank" class="trk12-button">
+        スポンサー募集要項
+      </a>
+    </div> <!-- /internav -->
 
-    <p>
-      東京Ruby会議12は、プログラミング言語Rubyを使ったソフトウェア開発について議論する地域Ruby会議です。東京圏の方を中心にRubyistで一堂に会し、Rubyでのソフトウェア開発・運用などの発表を中心に、知的好奇心が刺激されるカンファレンスとなればと思います。
-    </p>
+    <main>
+      <div class="panel">
+        <div class="header">
+          <h2>News <span class="subtitle">お知らせ</span></h2>
+        </div>
+        <div class="minipanel news">
+          <div>2024.9.30</div>
+          <div>
+            <a href="https://tokyorubykaigi12.s3.ap-northeast-1.amazonaws.com/tokyorubykaigi12-sponsorship-prospectus.pdf">スポンサーシップ募集要項</a>を更新しました。<br />募集枠に限りのありますRuby, Goldプランについて、先着順を取りやめ、申込み多数の場合抽選を実施する形式に変更いたしました。申込みの締め切りは 10/22 となります。
+          </div>
+        </div>
+        <div class="minipanel news">
+          <div>2024.9.29</div>
+          <div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSerCXJf1Sltik2lv2SW5ttdRV1xgiSVeW0K2BARthSNhuVZcA/viewform">発表の募集</a>を開始しました。
+          </div>
+        </div>
+        <div class="minipanel news">
+          <div>2024.9.24</div>
+          <div>
+            <a href="https://tokyorubykaigi12.s3.ap-northeast-1.amazonaws.com/tokyorubykaigi12-sponsorship-prospectus.pdf">スポンサーシップ募集要項</a>を公開しました<br /><strike>お申込みは10/1 15:00からになります。</strike>Ruby, Goldプランには枠に限りがあり、<strong>先着順</strong>とさせていただきます。詳しくは募集要項をご覧ください。<br /><strong>追記 (2024/9/26)</strong>: 募集開始日時について、後ろ倒しする方向で検討しております。確定次第本サイトおよび <a href="https://x.com/tokyork12">@tokyork12</a> にてお知らせします。</li>
+          </div>
+        </div>
+        <div class="minipanel news">
+          <div>2024.8.31</div>
+          <div>Twitterアカウント @tokyork12 をよろしくお願いします</div>
+        </div>
+        <div class="minipanel news">
+          <div>2024.8.5</div>
+          <div>東京Ruby会議12 Webサイト公開！</div>
+        </div>
+      </div>
 
-    <p>
-      Rubyist同士、そして東京圏に多数息づく "地域.rb" をはじめとしたRubyコミュニティ同士の交流の場となることを目指して、東京Ruby会議を開催します。楽しい一日をともに作りましょう！
-    </p>
+      <div class="panel">
+        <div class="header">
+          <h2>About <span class="subtitle">東京Ruby会議12について</span></h2>
+        </div>
+        <p>
+          東京Ruby会議12は、プログラミング言語Rubyを使ったソフトウェア開発について議論する地域Ruby会議です。東京圏の方を中心にRubyistで一堂に会し、Rubyでのソフトウェア開発・運用などの発表を中心に、知的好奇心が刺激されるカンファレンスとなればと思います。
+        </p>
 
-    <p>東京Ruby会議12 実行委員長 有友 大輔</p>
+        <p>
+          Rubyist同士、そして東京圏に多数息づく "地域.rb" をはじめとしたRubyコミュニティ同士の交流の場となることを目指して、東京Ruby会議を開催します。楽しい一日をともに作りましょう！
+        </p>
+      </div>
 
-    <h2>FAQ</h2>
-    <dl>
-      <dt>東京Ruby会議12は過去の東京Ruby会議とは関係のあるイベントですか。</dt>
-      <dd>
-        東京Ruby会議12は過去の東京Ruby会議とは直接的には関係のないイベントです。実行委員会も異なります。<br />
-        歴史的にも「東京Ruby会議」は特定の地域.rbがホストしているものではなく、開催ごとに別々のあり方をもっているようです。
-      </dd>
-      <dt>東京Ruby会議12は12回目の東京Ruby会議ですか。</dt>
-      <dd>
-        「東京Ruby会議」の名を関するイベントとしては6回目のようです。<br />
-        （参考：<a href="https://scrapbox.io/ruby-no-kai/Regional_RubyKaigi%2F%E6%9D%B1%E4%BA%AC%E3%81%AE%E5%9C%B0%E5%9F%9FRuby%E4%BC%9A%E8%AD%B0%E9%96%8B%E5%82%AC%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AE%E6%AD%B4%E5%8F%B2">Regional RubyKaigi/東京の地域Ruby会議開催カウントの歴史</a>）
-      </dd>
-      <dt>参加の意思表明はどのようにすればよいですか。</dt>
-      <dd>11月の上旬にチケットの販売を開始する予定です。</dd>
-      <dt>"東京" Ruby会議なのに横浜市？</dt>
-      <dd><a href="https://en.wikipedia.org/wiki/Greater_Tokyo_Area">Greater Tokyo</a> &mdash;&mdash; 鶴見駅は品川駅から最短15分で到着できます ;)</dd>
-    </dl>
+      <div class="panel">
+        <div class="header">
+          <h2>Keynote Speakers <span class="subtitle">基調講演</span></h2>
+        </div>
+        <div class="minipanel keynote-speaker">
+          <div class="icon">
+            <img src="img/jhawthorn.jpg" alt="John Hawthorn's icon" />
+          </div>
+          <div class="description">
+            <h3>John Hawthorn</h3>
+            <div>
+              John is a Ruby Committer and a Rails Core member, and a Staff Engineer at GitHub focusing on performance and scalability. He's based in Victoria, Canada.
+            </div>
+            <div class="social">
+              <img src="./img/github-mark.png" /><a href="https://github.com/jhawthorn">@jhawthorn</a>
+              <img src="./img/x-logo-black.png" /><a href="https://x.com/jhawthorn">@jhawthorn</a>
+            </div>
+          </div>
+        </div>
+        <div class="minipanel keynote-speaker">
+          <div class="icon">
+            <img src="img/eagletmt.jpg" alt="Kohei Suzuki's icon" />
+          </div>
+          <div class="description">
+            <h3>Kohei Suzuki</h3>
+            <div>
+              クックパッドの SRE。開発者の生産性向上に興味がある。Ruby と Rust が好き。
+            </div>
+            <div class="social">
+              <img src="./img/github-mark.png" /><a href="https://github.com/eagletmt">@eagletmt</a>
+              <img src="./img/x-logo-black.png" /><a href="https://x.com/eagletmt">@eagletmt</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <hr />
+      <div style="text-align: center;">
+        <img src="./img/symbol_red.png" alt="" width="80" height="80" />
+      </div>
 
-    <h2>このページのQRコード</h2>
-    <div style="text-align: center;">
-      <img src="qrcode.png" style="margin: 30px;"/>
-    </div>
+      <div class="panel">
+        <div class="header">
+          <h2>Sponsors <span class="subtitle">スポンサー</span></h2>
+        </div>
+        <div class="minipanel call-for-sponsors">
+          <div class="title">
+            <h3>スポンサー募集について</h3>
+            <span class="pill">募集中</span>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <p>
+              東京Ruby会議12ではスポンサー企業さまを募集しています。
+            </p>
+            <p>
+              <a href="https://tokyorubykaigi12.s3.ap-northeast-1.amazonaws.com/tokyorubykaigi12-sponsorship-prospectus.pdf" target="_blank">募集要項 (PDF)</a>
+            </p>
+          </div>
+
+          <div>
+            <a href="https://sponsorships.tokyorubykaigi12.org/conferences/tokyorubykaigi12/sponsorship/new" target="_blank" class="trk12-button">スポンサーを申し込む</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="./policy.html">Policy</a></li>
+          <li><a href="https://salvia.hall-info.jp/about/#access" target="_blank">Access</a></li>
+          <li><a href="https://x.com/tokyork12" target="_blank"><img src="./img/x-logo-white.png" width="24" height="24" /></a>
+ </a></li>
+        </ul>
+      </nav>
+      <div class="copyright">
+        &#169; Tokyo RubyKaigi 12 Team.
+      </div>
+    </footer>
   </body>
 </html>
