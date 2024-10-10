@@ -1,0 +1,48 @@
+---
+const { title, twitter_card } = Astro.props;
+---
+
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta property="og:title" content={title} />
+<meta
+  property="og:description"
+  content="2025.1.18 横浜市鶴見区民文化センター サルビアホール"
+/>
+<meta
+  property="og:image"
+  content="https://regional.rubykaigi.org/tokyo12/img/ogp.png"
+/>
+
+<meta
+  name="twitter:image"
+  content="https://regional.rubykaigi.org/tokyo12/img/ogp.png"
+/>
+<meta name="twitter:card" content={twitter_card} />
+<meta name="twitter:site" content="東京Ruby会議12" />
+<meta name="twitter:title" content={title} />
+<meta
+  name="twitter:description"
+  content="2025.1.18 横浜市鶴見区民文化センター サルビアホール"
+/>
+<meta
+  name="twitter:image"
+  content="https://regional.rubykaigi.org/tokyo12/img/ogp.png"
+/>
+
+<script>
+  if (location.host === "osyoyu.github.io") {
+    location.host = "regional.rubykaigi.org";
+  }
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+
+<title>{title}</title>
