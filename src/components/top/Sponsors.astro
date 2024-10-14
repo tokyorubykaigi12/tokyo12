@@ -1,65 +1,9 @@
 ---
 import Panel from "./Panel.astro";
-import MiniPanel from "./MiniPanel.astro";
+import CallForSponsors from "./CallForSponsors.astro";
 ---
 
-<style>
-  .call-for-sponsors .title {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .call-for-sponsors .title h3 {
-    font-size: 24px;
-    line-height: 36px;
-  }
-
-  .call-for-sponsors .title .pill {
-    height: fit-content;
-    border-radius: 4px;
-    padding: 4px 16px;
-    background-color: #dd451d;
-    color: #fff;
-    font-size: 16px;
-    vertical-align: middle;
-  }
-
-  .trk12-button {
-    display: inline-block;
-    border: solid 2px #000;
-    border-radius: 4px;
-    padding: 16px;
-    background-color: #fff;
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-</style>
 
 <Panel title="Sponsors" subtitle="スポンサー">
-  <MiniPanel backgroundColor="#f5f5f5">
-    <div class="call-for-sponsors">
-      <div class="title">
-        <h3>スポンサーシップ募集について</h3>
-        <span class="pill">募集中</span>
-      </div>
-      <div style="margin-bottom: 16px;">
-        <p>東京Ruby会議12ではスポンサー企業さまを募集しています。</p>
-        <p>
-          <a
-            href="https://tokyorubykaigi12.s3.ap-northeast-1.amazonaws.com/tokyorubykaigi12-sponsorship-prospectus.pdf"
-            target="_blank">募集要項 (PDF)</a
-          >
-        </p>
-      </div>
-      <div>
-        <a
-          href="https://sponsorships.tokyorubykaigi12.org/conferences/tokyorubykaigi12/sponsorship/new"
-          target="_blank"
-          class="trk12-button">スポンサーシップを申込む</a
-        >
-      </div>
-    </div>
-  </MiniPanel>
+  <CallForSponsors />
 </Panel>
