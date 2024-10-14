@@ -16,29 +16,6 @@ body {
   font-weight: 300;
 }
 
-.internav {
-  display: flex;
-  background-color: #000;
-  padding: 64px 0;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 64px;
-}
-@media screen and (max-width: 480px) {
-  .internav {
-    padding: 32px 0;
-    gap: 32px;
-  }
-}
-.internav a {
-  background-color: #fff;
-  border: 0px;
-  border-radius: 4px;
-  padding: 16px 32px;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 29px;
-}
 
 main {
   display: flex;

@@ -1,8 +1,12 @@
 ---
 import "../styles/style.css";
 import Head from "../components/Layouts/Head.astro";
+
 import Header from "../components/Layouts/Header.astro";
+
 import Hero from "../components/top/Hero.astro";
+import InterNav from "../components/top/InterNav.astro";
+
 import Footer from "../components/Layouts/Footer.astro";
 
 import GitHubMarkImage from "../imgs/github-mark.png";
@@ -22,24 +26,7 @@ const twitter_card = "summary_large_image";
   <body>
     <Header />
     <Hero />
-
-    <div class="internav">
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSerCXJf1Sltik2lv2SW5ttdRV1xgiSVeW0K2BARthSNhuVZcA/viewform"
-        target="_blank"
-        class="trk12-button"
-      >
-        発表を応募する
-      </a>
-      <a
-        href="https://tokyorubykaigi12.s3.ap-northeast-1.amazonaws.com/tokyorubykaigi12-sponsorship-prospectus.pdf"
-        target="_blank"
-        class="trk12-button"
-      >
-        スポンサーシップ募集要項
-      </a>
-    </div>
-    <!-- /internav -->
+    <InterNav />
 
     <main>
       <div class="panel">

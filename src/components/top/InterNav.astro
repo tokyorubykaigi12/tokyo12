@@ -1,0 +1,64 @@
+---
+---
+
+<style>
+  .internav {
+    display: flex;
+    background-color: #000;
+    padding: 64px 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 64px;
+  }
+  @media screen and (width <= 480px) {
+    .internav {
+      padding: 24px 0;
+      gap: 24px;
+    }
+  }
+
+  .internav a {
+    background-color: #fff;
+    border: 0px;
+    border-radius: 4px;
+    padding: 16px 32px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+  }
+  @media screen and (width <= 480px) {
+    .internav a {
+      padding: 16px;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  .trk12-button {
+    display: inline-block;
+    border: solid 2px #000;
+    border-radius: 4px;
+    padding: 16px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
+
+<div class="internav">
+  <a
+    href="https://docs.google.com/forms/d/e/1FAIpQLSerCXJf1Sltik2lv2SW5ttdRV1xgiSVeW0K2BARthSNhuVZcA/viewform"
+    target="_blank"
+    class="trk12-button"
+  >
+    スピーカーに応募する
+  </a>
+  <a
+    href="https://tokyorubykaigi12.s3.ap-northeast-1.amazonaws.com/tokyorubykaigi12-sponsorship-prospectus.pdf"
+    target="_blank"
+    class="trk12-button"
+  >
+    スポンサー募集について
+  </a>
+</div>
