@@ -33,6 +33,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## Licenses
-- new tab by Astonish from <a href="https://thenounproject.com/browse/icons/term/new-tab/" target="_blank" title="new tab Icons">Noun Project</a> (CC BY 3.0)
