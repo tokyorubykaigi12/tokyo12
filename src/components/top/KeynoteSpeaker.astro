@@ -24,6 +24,7 @@ import XLogoBlackImage from "../../imgs/x-logo-black.png";
   @media screen and (width <= 960px) {
     .keynote-speaker .inner {
       flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -53,6 +54,9 @@ import XLogoBlackImage from "../../imgs/x-logo-black.png";
 
   .keynote-speaker .description .social {
     line-height: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 24px;
   }
 
   .keynote-speaker .description .social img {
@@ -89,14 +93,18 @@ import XLogoBlackImage from "../../imgs/x-logo-black.png";
         <h3>{name}</h3>
         <slot />
         <div class="social">
-          <img src={GitHubMarkImage.src} /><a
-            href=`https://github.com/{githubID}`
-          >
-            @{githubID}
-          </a>
-          <img src={XLogoBlackImage.src} /><a href=`https://x.com/{xID}`>
-            @{xID}
-          </a>
+          <div>
+            <img src={GitHubMarkImage.src} /><a
+              href=`https://github.com/{githubID}`
+            >
+              @{githubID}
+            </a>
+          </div>
+          <div>
+            <img src={XLogoBlackImage.src} /><a href=`https://x.com/{xID}`>
+              @{xID}
+            </a>
+          </div>
         </div>
       </div>
     </div>
