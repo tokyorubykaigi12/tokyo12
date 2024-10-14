@@ -1,0 +1,39 @@
+---
+import News from "./News.astro";
+import About from "./About.astro";
+import KeynoteSpeakers from "./KeynoteSpeakers.astro";
+import Sponsors from "./Sponsors.astro";
+
+import SymbolRedImage from "../../imgs/symbol_red.png";
+---
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    background-color: #fcece8;
+  }
+  @media screen and (width <= 960px) {
+    main {
+      padding: 48px 0 80px 0;
+    }
+  }
+  @media screen and (width <= 480px) {
+    main {
+      padding: 48px 0 80px 0;
+    }
+  }
+</style>
+
+<main>
+  <News />
+  <About />
+  <KeynoteSpeakers />
+
+  <div style="text-align: center;">
+    <img src={SymbolRedImage.src} alt="" width="80" height="80" />
+  </div>
+
+  <Sponsors />
+</main>

@@ -1,0 +1,104 @@
+---
+import MiniPanel from "./MiniPanel.astro";
+
+const { iconSrc, iconAlt, name, githubID, xID } = Astro.props;
+import GitHubMarkImage from "../../imgs/github-mark.png";
+import XLogoBlackImage from "../../imgs/x-logo-black.png";
+---
+
+<style>
+  .keynote-speaker {
+    margin-bottom: 48px;
+  }
+  @media screen and (width <= 960px) {
+    .keynote-speaker {
+      margin-bottom: 24px;
+    }
+  }
+
+  .keynote-speaker .inner {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+  @media screen and (width <= 960px) {
+    .keynote-speaker .inner {
+      flex-direction: column;
+    }
+  }
+
+  .keynote-speaker .icon img {
+    width: 320px;
+    border: 1px;
+    border-radius: 12px;
+  }
+  @media screen and (max-width: 480px) {
+    .keynote-speaker .icon img {
+      width: 240px;
+    }
+  }
+
+  h3 {
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+  }
+
+  .keynote-speaker .description {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .keynote-speaker .description .social {
+    line-height: 32px;
+  }
+
+  .keynote-speaker .description .social img {
+    width: 30px;
+    height: 30px;
+    margin: 0 8px;
+  }
+  @media screen and (width <= 480px) {
+    .keynote-speaker .description .social img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .keynote-speaker .description .social a {
+    text-decoration: none;
+    font-size: 20px;
+    vertical-align: top;
+  }
+  @media screen and (width <= 480px) {
+    .keynote-speaker .description .social a {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<div class="keynote-speaker">
+  <MiniPanel>
+    <div class="inner">
+      <div class="icon">
+        <img src={iconSrc} alt={iconAlt} />
+      </div>
+      <div class="description">
+        <h3>{name}</h3>
+        <slot />
+        <div class="social">
+          <img src={GitHubMarkImage.src} /><a
+            href=`https://github.com/{githubID}`
+          >
+            @{githubID}
+          </a>
+          <img src={XLogoBlackImage.src} /><a href=`https://x.com/{xID}`>
+            @{xID}
+          </a>
+        </div>
+      </div>
+    </div>
+  </MiniPanel>
+</div>

@@ -1,0 +1,40 @@
+---
+import Panel from "./Panel.astro";
+import KeynoteSpeaker from "./KeynoteSpeaker.astro";
+
+import JhawthornImage from "../../imgs/jhawthorn.jpg";
+import EagletmtImage from "../../imgs/eagletmt.jpg";
+import GitHubMarkImage from "../../imgs/github-mark.png";
+import XLogoBlackImage from "../../imgs/x-logo-black.png";
+---
+
+<Panel title="Keynote Speakers" subtitle="基調講演">
+  <KeynoteSpeaker
+    iconSrc={JhawthornImage.src}
+    iconAlt="John Hawthorn's icon"
+    name="John Hawthorn"
+    githubID="jhawthorn"
+    xID="jhawthorn"
+  >
+    <p>
+      John is a Ruby Committer and a Rails Core member, and a Staff Engineer at
+      GitHub focusing on performance and scalability. He's based in Victoria,
+      Canada.
+    </p>
+    <p>
+      RubyコミッターとRails
+      Coreメンバーであり、GitHubにてパフォーマンスとスケーラビリティに取り組むスタッフエンジニア。カナダのビクトリア在住。
+    </p>
+  </KeynoteSpeaker>
+  <KeynoteSpeaker
+    iconSrc={EagletmtImage.src}
+    iconAlt="Kohei Suzuki's icon"
+    name="Kohei Suzuki"
+    githubID="eagletmt"
+    xID="eagletmt"
+  >
+    <p>
+      クックパッドの SRE。開発者の生産性向上に興味がある。Ruby と Rust が好き。
+    </p>
+  </KeynoteSpeaker>
+</Panel>

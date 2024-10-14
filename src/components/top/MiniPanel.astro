@@ -1,0 +1,15 @@
+---
+const {backgroundColor = "#fcece8"} = Astro.props;
+---
+
+<style define:vars={{backgroundColor}}>
+  .minipanel {
+    border-radius: 24px;
+    padding: 32px;
+    background-color: var(--backgroundColor);
+  }
+</style>
+
+<div class="minipanel">
+  <slot/>
+</div>

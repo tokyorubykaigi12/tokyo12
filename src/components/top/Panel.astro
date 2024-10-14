@@ -1,0 +1,52 @@
+---
+const { title, subtitle } = Astro.props;
+---
+
+<style>
+  .panel {
+    width: min(1132px, 100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 48px 96px;
+    border-radius: 32px;
+    background-color: #fff;
+  }
+  @media screen and (width <= 960px) {
+    .panel {
+      padding: 32px 24px;
+    }
+  }
+  @media screen and (width <= 480px) {
+    .panel {
+      width: 100%;
+      border-radius: 0;
+      margin: 0;
+      padding: 32px 24px;
+    }
+  }
+
+  .panel .header {
+    display: flex;
+    margin-bottom: 48px;
+  }
+
+  .panel .header h2 {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 53px;
+    vertical-align: middle;
+  }
+
+  .panel .header h2 .subtitle {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 36px;
+  }
+</style>
+
+<div class="panel">
+  <div class="header">
+    <h2>{title} <span class="subtitle">{subtitle}</span></h2>
+  </div>
+  <slot />
+</div>
