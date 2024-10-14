@@ -27,49 +27,6 @@ body {
   font-weight: 300;
 }
 
-nav {
-  height: 24px;
-  padding: 32px;
-}
-@media screen and (max-width: 480px) {
-  nav {
-    padding: 24px 16px;
-  }
-}
-nav ul {
-  display: flex;
-  gap: 32px;
-  list-style-type: none;
-  font-size: 16px;
-}
-@media screen and (max-width: 480px) {
-  nav ul {
-    gap: 12px;
-  }
-}
-nav a {
-  color: #000;
-  text-decoration: none;
-}
-nav a:hover {
-  text-decoration: underline;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 24px 56px;
-}
-@media screen and (max-width: 480px) {
-  header {
-    padding: 16px;
-  }
-}
-header .logo img {
-  height: 75px;
-}
-
 .hero {
   width: 100%;
 }
