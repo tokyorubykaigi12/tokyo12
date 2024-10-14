@@ -1,27 +1,16 @@
 ---
-import "../styles/style.css";
-import Head from "../components/Layouts/Head.astro";
-
-import Header from "../components/Layouts/Header.astro";
+import Layout from "../components/Layouts/Layout.astro";
 
 import Hero from "../components/top/Hero.astro";
 import InterNav from "../components/top/InterNav.astro";
 import Main from "../components/top/Main.astro";
-import Footer from "../components/Layouts/Footer.astro";
 
 const title = "東京Ruby会議12";
 const twitter_card = "summary_large_image";
 ---
 
-<html lang="ja">
-  <head>
-    <Head title={title} twitter_card={twitter_card} />
-  </head>
-  <body>
-    <Header />
-    <Hero />
-    <InterNav />
-    <Main />
-    <Footer />
-  </body>
-</html>
+<Layout title={title} twitter_card={twitter_card}>
+  <Hero />
+  <InterNav />
+  <Main />
+</Layout>
