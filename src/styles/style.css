@@ -8,86 +8,12 @@ a {
   color: #000;
 }
 
-/* Components */
-.trk12-button {
-  display: inline-block;
-  border: solid 2px #000;
-  border-radius: 4px;
-  padding: 16px;
-  background-color: #fff;
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
 
 /* Layout */
 body {
   width: 100%;
   font-family: "Futura", "Jost", sans-serif;
   font-weight: 300;
-}
-
-.hero {
-  width: 100%;
-}
-.hero .hero-inner {
-  width: min(1132px, 100% - 40px);
-  margin-left: auto;
-  margin-right: auto;
-  padding: 32px 98px;
-  border-radius: 32px 32px 0 0;
-  background: #dd451d;
-  color: #fff;
-  text-align: center;
-}
-@media screen and (max-width: 480px) {
-  .hero .hero-inner {
-    padding: 32px 20px;
-  }
-}
-.hero .hero-inner .primary-logo {
-  width: 80%;
-}
-@media screen and (max-width: 480px) {
-  .hero .hero-inner .primary-logo {
-    width: 100%;
-    height: auto;
-  }
-}
-.hero .hero-inner .datetime {
-  font-size: 36px;
-  line-height: 48px;
-}
-@media screen and (max-width: 480px) {
-  .hero .hero-inner .datetime {
-    font-size: 20px;
-    line-height: 26px;
-  }
-}
-.hero .hero-inner .location {
-  font-size: 24px;
-  line-height: 36px;
-}
-@media screen and (max-width: 480px) {
-  .hero .hero-inner .location {
-    font-size: 16px;
-    line-height: 24px;
-  }
-}
-.hero .hero-inner .organizing-team {
-  font-size: 16px;
-  line-height: 24px;
-}
-@media screen and (max-width: 480px) {
-  .hero .hero-inner .organizing-team {
-    font-size: 12px;
-    line-height: 18px;
-  }
-}
-.hero .hero-inner .buy-a-ticket {
-  border: 0px;
-  background: #f5f5f5;
-  color: #aeaeb2;
 }
 
 .internav {

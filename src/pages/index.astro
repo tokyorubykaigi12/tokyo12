@@ -2,10 +2,9 @@
 import "../styles/style.css";
 import Head from "../components/Layouts/Head.astro";
 import Header from "../components/Layouts/Header.astro";
+import Hero from "../components/top/Hero.astro";
 import Footer from "../components/Layouts/Footer.astro";
 
-import PrimaryLogoWhiteImage from "../imgs/primary_logo_white.png";
-import TriImage from "../imgs/tri.png";
 import GitHubMarkImage from "../imgs/github-mark.png";
 import XLogoBlackImage from "../imgs/x-logo-black.png";
 import SymbolRedImage from "../imgs/symbol_red.png";
@@ -22,34 +21,7 @@ const twitter_card = "summary_large_image";
   </head>
   <body>
     <Header />
-    <div class="hero">
-      <div class="hero-inner">
-        <h1>
-          <img
-            src={PrimaryLogoWhiteImage.src}
-            alt="Tokyo RubyKaigi 12"
-            class="primary-logo"
-          />
-        </h1>
-
-        <div style="margin-bottom: 16px;">
-          <div class="datetime">2025.1.18 (Sat)</div>
-          <div class="location">横浜市鶴見区民文化センター サルビアホール</div>
-          <div class="organizing-team">主催：東京Ruby会議12実行委員会</div>
-        </div>
-
-        <div class="actions" style="margin-bottom: 28px;">
-          <a class="trk12-button buy-a-ticket">チケット購入 (2024.10.15 OPEN)</a
-          >
-        </div>
-
-        <div>
-          <img src={TriImage.src} alt="" />
-        </div>
-      </div>
-      <!-- /hero-inner -->
-    </div>
-    <!-- /hero -->
+    <Hero />
 
     <div class="internav">
       <a
