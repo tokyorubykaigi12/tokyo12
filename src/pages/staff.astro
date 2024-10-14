@@ -1,14 +1,15 @@
 ---
 import Layout from "../components/Layouts/Layout.astro";
 import Main from "../components/Layouts/Main.astro";
-import PolicyText from "../components/policy/Text.astro"
 
-const title = "アンチハラスメントポリシー | 東京Ruby会議12";
-const twitter_card = "summary";
+import Preparing from "../components/Preparing.astro";
+
+const title = "スタッフ | 東京Ruby会議12";
+const twitter_card = "summary_large_image";
 ---
 
 <Layout title={title} twitter_card={twitter_card}>
   <Main>
-    <PolicyText />
+    <Preparing />
   </Main>
 </Layout>

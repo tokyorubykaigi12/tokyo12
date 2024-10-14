@@ -1,28 +1,25 @@
 ---
-import Head from "../Layouts/Head.astro";
-
-const title = "アンチハラスメントポリシー | 東京Ruby会議12";
-const twitter_card = "summary";
+import Panel from "../Layouts/Panel.astro";
 ---
 
-<html lang="ja">
-  <head>
-    <Head title={title} twitter_card={twitter_card} />
-    <style>
-      body {
-        font-family: "Helvetica Neue", Helvetica, sans-serif;
-        display: block;
-        margin: 8px;
-      }
+<style>
+  .policytext {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+  }
 
-      a {
-        color: #000;
-        text-decoration: none;
-      }
-    </style>
-  </head>
-  <body>
-    <h1><a href=`${import.meta.env.BASE_URL}/`>東京Ruby会議12</a> アンチハラスメントポリシー</h1>
+  .policytext ul {
+    padding: 12px 0;
+  }
+
+  .policytext li {
+    list-style-type: disc;
+    margin-left: 24px;
+    text-align: left;
+  }
+</style>
+
+<div class="policytext">
+  <Panel title="東京Ruby会議12 アンチハラスメントポリシー">
     <p>
       東京Ruby会議12は、誰もがハラスメントを受けずに参加できるカンファレンスを目指しています。いかなる形であれハラスメントは許容できません。このルールを破る人は誰であろうと、オーガナイザーの裁量で警告を与えたり、カンファレンスから退場とすることもありえます。
     </p>
@@ -72,5 +69,5 @@ const twitter_card = "summary";
       本ポリシーに関して質問や懸念などございましたら
       tokyorubykaigi12@googlegroups.org までお気軽にご連絡ください。
     </p>
-  </body>
-</html>
+  </Panel>
+</div>
