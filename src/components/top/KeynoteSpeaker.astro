@@ -59,13 +59,31 @@ import XLogoBlackImage from "../../imgs/x-logo-black.png";
     gap: 0 24px;
   }
 
-  .keynote-speaker .description .social img {
+  .keynote-speaker .description .social .github,
+  .x {
+    display: flex;
+    align-items: center;
+  }
+
+  .keynote-speaker .description .social .github img {
     width: 30px;
     height: 30px;
     margin: 0 8px;
   }
   @media screen and (width <= 480px) {
-    .keynote-speaker .description .social img {
+    .keynote-speaker .description .social .github img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .keynote-speaker .description .social .x img {
+    width: 24px;
+    height: 24px;
+    margin: 0 8px;
+  }
+  @media screen and (width <= 480px) {
+    .keynote-speaker .description .social .x img {
       width: 16px;
       height: 16px;
     }
@@ -93,14 +111,14 @@ import XLogoBlackImage from "../../imgs/x-logo-black.png";
         <h3>{name}</h3>
         <slot />
         <div class="social">
-          <div>
+          <div class="github">
             <img src={GitHubMarkImage.src} /><a
               href=`https://github.com/{githubID}`
             >
               @{githubID}
             </a>
           </div>
-          <div>
+          <div class="x">
             <img src={XLogoBlackImage.src} /><a href=`https://x.com/{xID}`>
               @{xID}
             </a>
