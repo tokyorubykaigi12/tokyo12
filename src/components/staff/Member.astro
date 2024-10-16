@@ -17,6 +17,16 @@ const iconSize = 400;
 ---
 
 <style>
+  .outer {
+    width: 48%;
+    margin-bottom: 32px;
+  }
+  @media screen and (width <= 720px) {
+    .outer {
+      width: 100%;
+    }
+  }
+
   .icon {
     display: flex;
     justify-content: center;
@@ -24,10 +34,10 @@ const iconSize = 400;
 
     img {
       border-radius: 12px;
-      border: solid #D9D9D9 1px;
+      border: solid #d9d9d9 1px;
       width: 200px;
     }
-    @media screen and (width <= 960px) {
+    @media screen and (width <= 480px) {
       img {
         width: 160px;
       }
@@ -48,33 +58,20 @@ const iconSize = 400;
     gap: 0 24px;
   }
 
-  .social .github,
-  .x {
+  .social {
     display: flex;
     align-items: center;
   }
 
-  .social .github img {
+  .social img {
     width: 30px;
     height: 30px;
     margin: 0 8px 0 0;
   }
   @media screen and (width <= 480px) {
-    .social .github img {
+    .social img {
       width: 18px;
       height: 18px;
-    }
-  }
-
-  .social .x img {
-    width: 24px;
-    height: 24px;
-    margin: 0 8px 0 0;
-  }
-  @media screen and (width <= 480px) {
-    .social .x img {
-      width: 16px;
-      height: 16px;
     }
   }
 
@@ -90,21 +87,25 @@ const iconSize = 400;
   }
 </style>
 
-<MiniPanel>
-  <div class="icon">
-    <GravatarImage md5Email={md5Email} size={400} alt={name} />
-  </div>
-  <h3>{name}</h3>
-  <div class="social">
-    <div class="github">
-      <img src={GitHubMarkImage.src} /><a href=`https://github.com/${githubID}`>
-        @{githubID}
-      </a>
+<div class="outer">
+  <MiniPanel>
+    <div class="icon">
+      <GravatarImage md5Email={md5Email} size={400} alt={name} />
     </div>
-    <div class="x">
-      <img src={XLogoBlackImage.src} /><a href=`https://x.com/${xID}`>
-        @{xID}
-      </a>
+    <h3>{name}</h3>
+    <div class="social">
+      <div class="github">
+        <img src={GitHubMarkImage.src} /><a
+          href=`https://github.com/${githubID}`
+        >
+          @{githubID}
+        </a>
+      </div>
+      <div class="x">
+        <img src={XLogoBlackImage.src} /><a href=`https://x.com/${xID}`>
+          @{xID}
+        </a>
+      </div>
     </div>
-  </div>
-</MiniPanel>
+  </MiniPanel>
+</div>
