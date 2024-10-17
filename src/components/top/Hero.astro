@@ -1,0 +1,97 @@
+---
+import PrimaryLogoWhiteImage from "../../imgs/primary_logo_white.png";
+import TriImage from "../../imgs/tri.png";
+import TicketButtonBefore from "./TicketButtonBefore.astro";
+import TicketButtonSelling from "./TicketButtonSelling.astro";
+---
+
+<style>
+  .hero {
+    width: 100%;
+  }
+
+  .hero .hero-inner {
+    width: min(1132px, 100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 32px 98px;
+    border-radius: 32px 32px 0 0;
+    background: #dd451d;
+    color: #fff;
+    text-align: center;
+  }
+  @media screen and (width <= 480px) {
+    .hero .hero-inner {
+      padding: 32px 20px;
+    }
+  }
+
+  .hero .hero-inner .primary-logo {
+    width: 80%;
+    height: auto;
+  }
+  @media screen and (width <= 480px) {
+    .hero .hero-inner .primary-logo {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .hero .hero-inner .datetime {
+    font-size: 36px;
+    line-height: 48px;
+  }
+  @media screen and (width <= 480px) {
+    .hero .hero-inner .datetime {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+
+  .hero .hero-inner .location {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  @media screen and (width <= 480px) {
+    .hero .hero-inner .location {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  .hero .hero-inner .organizing-team {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @media screen and (width <= 480px) {
+    .hero .hero-inner .organizing-team {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+</style>
+
+<div class="hero">
+  <div class="hero-inner">
+    <h1>
+      <img
+        src={PrimaryLogoWhiteImage.src}
+        alt="Tokyo RubyKaigi 12"
+        class="primary-logo"
+      />
+    </h1>
+
+    <div style="margin-bottom: 16px;">
+      <div class="datetime">2025.1.18 (Sat)</div>
+      <div class="location">横浜市鶴見区民文化センター サルビアホール</div>
+      <div class="organizing-team">主催：東京Ruby会議12実行委員会</div>
+    </div>
+
+    <TicketButtonBefore />
+    <!-- <TicketButtonSelling /> -->
+
+    <div>
+      <img src={TriImage.src} alt="" />
+    </div>
+  </div>
+</div>

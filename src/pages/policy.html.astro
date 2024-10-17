@@ -1,5 +1,14 @@
 ---
-import PolicyBody from "../components/PolicyBody.astro";
+import Layout from "../components/Layouts/Layout.astro";
+import Main from "../components/Layouts/Main.astro";
+import PolicyText from "../components/policy/Text.astro"
+
+const title = "アンチハラスメントポリシー | 東京Ruby会議12";
+const twitter_card = "summary";
 ---
 
-<PolicyBody />
+<Layout title={title} twitter_card={twitter_card}>
+  <Main>
+    <PolicyText />
+  </Main>
+</Layout>

@@ -1,0 +1,36 @@
+---
+import Head from "./Head.astro";
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+
+const { title, twitter_card } = Astro.props;
+---
+
+<style is:global>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: #000;
+  }
+
+  body {
+    width: 100%;
+    font-family: "Futura", "Jost", sans-serif;
+    font-weight: 300;
+  }
+</style>
+
+<html lang="ja">
+  <head>
+    <Head title={title} twitter_card={twitter_card} />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>

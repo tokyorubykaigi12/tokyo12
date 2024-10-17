@@ -1,0 +1,17 @@
+---
+import MiniPanel from "../Layouts/MiniPanel.astro";
+const { date } = Astro.props;
+---
+
+<style>
+  .news {
+    margin-bottom: 16px;
+  }
+</style>
+
+<div class="news">
+  <MiniPanel>
+    <div>{date}</div>
+    <slot />
+  </MiniPanel>
+</div>

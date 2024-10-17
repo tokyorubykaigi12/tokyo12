@@ -1,0 +1,121 @@
+---
+import BarsIcon from "../../icons/bars.svg";
+import XLogoWhiteImage from "../../../imgs/x-logo-white.png";
+import ArrowUpRightFromSquareIcon from "../../icons/arrow-up-right-from-square-white.svg";
+import CloseIcon from "../../icons/close.svg"
+---
+
+<style>
+  .hamburger {
+    height: 48px;
+  }
+  @media screen and (width > 700px) {
+    .hamburger {
+      display: none;
+    }
+  }
+
+  .invisible {
+    display: none;
+  }
+
+  .visible {
+    display: unset;
+  }
+
+  .hamburger_menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #dd451d;
+    z-index: 1000;
+
+    .hamburger_menu_close_icon {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      list-style-type: none;
+
+      li {
+        margin-bottom: 24px;
+        font-size: 32px;
+        color: #fff;
+        text-align: center;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+
+        .access {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+      }
+    }
+  }
+
+</style>
+
+<script>
+  document.querySelector(".hamburger_icon")?.addEventListener("click", () => {
+    document.querySelector(".hamburger_icon")?.classList.toggle("invisible");
+    document.querySelector(".hamburger_menu")?.classList.toggle("visible");
+  });
+
+  document.querySelector(".hamburger_menu_close_icon")?.addEventListener("click", () => {
+    document.querySelector(".hamburger_icon")?.classList.toggle("invisible");
+    document.querySelector(".hamburger_menu")?.classList.toggle("visible");
+  });
+</script>
+
+<div class="hamburger">
+  <div class="hamburger_icon">
+    <img src={BarsIcon.src} alt="Menu" height="48" />
+  </div>
+  <nav class="hamburger_menu invisible">
+    <div class="hamburger_menu_close_icon">
+      <img src={CloseIcon.src} alt="Close" height="32" />
+    </div>
+    <ul>
+      <li>
+        <a href={`${import.meta.env.BASE_URL}/schedule/`}>Schedule</a>
+      </li>
+      <li>
+        <a href={`${import.meta.env.BASE_URL}/news/`}>News</a>
+      </li>
+      <li>
+        <a href={`${import.meta.env.BASE_URL}/policy/`}>Policy</a>
+      </li>
+      <li>
+        <a href={`${import.meta.env.BASE_URL}/staff/`}>Staff</a>
+      </li>
+      <li class="access">
+        <a href="https://salvia.hall-info.jp/about/#access" target="_blank">
+          Access
+          <img src={ArrowUpRightFromSquareIcon.src} height="24" />
+        </a>
+      </li>
+      <li>
+        <a href="https://x.com/tokyork12" target="_blank">
+          <img src={XLogoWhiteImage.src} alt="X logo" width="24" height="24" />
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

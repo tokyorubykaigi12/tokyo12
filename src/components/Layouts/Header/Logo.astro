@@ -1,0 +1,17 @@
+---
+import PrimaryLogoRedImage from "../../../imgs/primary_logo_red.png";
+---
+
+<style>
+  .logo img {
+    height: 75px;
+  }
+  @media screen and (width <= 480px) {
+    header .logo img {
+      height: 48px;
+    }
+  }
+</style>
+<div class="logo">
+  <a href={`${import.meta.env.BASE_URL}/`}><img src={PrimaryLogoRedImage.src} alt="Tokyo RubyKaigi 12" /></a>
+</div>

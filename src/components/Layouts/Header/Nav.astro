@@ -1,0 +1,63 @@
+---
+import XLogoBlackImage from "../../../imgs/x-logo-black.png";
+import ArrowUpRightFromSquareIcon from "../../icons/arrow-up-right-from-square.svg";
+---
+
+<style>
+  nav {
+    height: 24px;
+  }
+  @media screen and (width <= 700px) {
+    nav {
+      display: none;
+    }
+  }
+
+  nav ul {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style-type: none;
+    font-size: 16px;
+  }
+  @media screen and (width <= 700px) {
+    nav ul {
+      gap: 12px;
+    }
+  }
+
+  nav a {
+    color: #000;
+    text-decoration: none;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+</style>
+<nav>
+  <ul>
+    <li>
+      <a href={`${import.meta.env.BASE_URL}/schedule/`}>Schedule</a>
+    </li>
+    <li>
+      <a href={`${import.meta.env.BASE_URL}/news/`}>News</a>
+    </li>
+    <li>
+      <a href={`${import.meta.env.BASE_URL}/policy/`}>Policy</a>
+    </li>
+    <li>
+      <a href={`${import.meta.env.BASE_URL}/staff/`}>Staff</a>
+    </li>
+    <li class="access">
+      <a href="https://salvia.hall-info.jp/about/#access" target="_blank">
+        Access
+        <img src={ArrowUpRightFromSquareIcon.src} height="16" />
+      </a>
+    </li>
+    <li>
+      <a href="https://x.com/tokyork12" target="_blank">
+        <img src={XLogoBlackImage.src} alt="X logo" width="24" height="24" />
+      </a>
+    </li>
+  </ul>
+</nav>
