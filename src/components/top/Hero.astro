@@ -3,6 +3,17 @@ import PrimaryLogoWhiteImage from "../../imgs/primary_logo_white.png";
 import TriImage from "../../imgs/tri.png";
 import TicketButtonBefore from "./TicketButtonBefore.astro";
 import TicketButtonSelling from "./TicketButtonSelling.astro";
+
+function isTicketOpen(): boolean {
+  const ticketOpenDate = new Date("2024-10-17T14:00:00+09:00");
+
+  const date = new Date();
+  let gmtDate = new Date(date.toUTCString().replace("GMT", ""));
+  const hours = gmtDate.getHours();
+  gmtDate.setHours(hours + 9); // GMT+9
+
+  return gmtDate >= ticketOpenDate;
+}
 ---
 
 <style>
@@ -87,8 +98,7 @@ import TicketButtonSelling from "./TicketButtonSelling.astro";
       <div class="organizing-team">主催：東京Ruby会議12実行委員会</div>
     </div>
 
-    <TicketButtonBefore />
-    <!-- <TicketButtonSelling /> -->
+    {isTicketOpen() ? <TicketButtonSelling /> : <TicketButtonBefore />}
 
     <div>
       <img src={TriImage.src} alt="" />
