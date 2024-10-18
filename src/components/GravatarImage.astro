@@ -1,0 +1,11 @@
+---
+interface Props {
+  alt: string;
+  md5Email: string;
+  size: number;
+}
+
+const {alt, md5Email, size} = Astro.props;
+---
+
+<img src={`https://secure.gravatar.com/avatar/${md5Email}.jpg?s=${size}`} alt={alt} />

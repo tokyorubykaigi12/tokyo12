@@ -1,15 +1,48 @@
 ---
 import Layout from "../components/Layouts/Layout.astro";
 import Main from "../components/Layouts/Main.astro";
-
-import Preparing from "../components/Preparing.astro";
+import Panel from "../components/Layouts/Panel.astro";
+import Member from "../components/staff/Member.astro";
+import PanelHeader from "../components/Layouts/PanelHeader.astro";
 
 const title = "スタッフ | 東京Ruby会議12";
 const twitter_card = "summary_large_image";
 ---
 
+<style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+</style>
+
 <Layout title={title} twitter_card={twitter_card}>
   <Main>
-    <Preparing />
+    <Panel title="Organizers" subtitle="実行委員">
+      <div class="container">
+        <Member
+          name="Daisuke Aritomo"
+          md5Email="0a675bac15087f05fbd68411c2a603ce"
+          githubID="osyoyu"
+          xID="osyoyu"
+        />
+        <Member
+          name="Natsuko Nadoyama"
+          md5Email="0351727b99b749cc07e5a4601646284d"
+          githubID="pndcat"
+          xID="pndcat"
+        />
+        <Member
+          name="Takahito Sueda"
+          md5Email="2fda10ff8dccf267309cb551841e96c0"
+          githubID="terfno"
+          xID="terfno_mai"
+        />
+      </div>
+      <!-- <PanelHeader title="Designer" subtitle="デザイナー" /> -->
+      <div class="container"></div>
+    </Panel>
+    <!-- <Panel title="Helper" subtitle="ヘルパー"></Panel> -->
   </Main>
 </Layout>
