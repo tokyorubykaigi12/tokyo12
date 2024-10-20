@@ -1,9 +1,82 @@
 ---
 import Panel from "../Layouts/Panel.astro";
 import CallForSponsors from "./CallForSponsors.astro";
+import Sponsor from "./Sponsor.astro";
 ---
 
-
 <Panel title="Sponsors" subtitle="スポンサー">
-  <CallForSponsors />
+  <div class="inner">
+    <div class="ruby">
+      <h3>Ruby Sponsors</h3>
+      <Sponsor
+        grade="Ruby"
+        label="Custom Sponsor Label"
+        company={{
+          logoImageSrc: "Image.src",
+          name: "Company Name",
+          link: "https://example.com/",
+          description: "Description of the company",
+        }}
+      />
+    </div>
+    <div class="gold">
+      <h3>Gold Sponsors</h3>
+      <Sponsor
+        grade="Gold"
+        label="Custom Sponsor Label"
+        company={{
+          logoImageSrc: "Image.src",
+          name: "Company Name",
+          link: "https://example.com/",
+          description: "Description of the company",
+        }}
+      />
+    </div>
+    <h3>Silver Sponsors</h3>
+    <div class="silver">
+      <Sponsor
+        grade="Silver"
+        label="Custom Sponsor Label"
+        company={{
+          logoImageSrc: "Image.src",
+          name: "Company Name",
+          link: "https://example.com/",
+          description: "Description of the company",
+        }}
+      />
+    </div>
+    <CallForSponsors />
+  </div>
 </Panel>
+
+<style>
+  .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  h3 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 43px;
+  }
+
+  .ruby {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .gold {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .silver {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+</style>

@@ -1,0 +1,53 @@
+---
+type Company = {
+  logoImageSrc: string;
+  name: string;
+  link: string;
+  description: string;
+};
+
+interface Props {
+  grade: "Ruby" | "Gold" | "Silver";
+  company: Company;
+}
+
+const { grade, company } = Astro.props;
+const RubyLargeSize = 320;
+const RubySmallSize = 240;
+const GoldLargeSize = 240;
+const GoldSmallSize = 200;
+const SilverLargeSize = 160;
+const SilverSmallSize = 160;
+---
+
+<div class:list={grade}>
+  <img src={company.logoImageSrc} alt={company.name} />
+</div>
+
+<style>
+  .Ruby {
+    img {
+      width: 320px;
+    }
+    @media screen and (width <= 960px) {
+      img {
+        width: 240px;
+      }
+    }
+  }
+  .Gold {
+    img {
+      width: 240px;
+    }
+    @media screen and (width <= 960px) {
+      img {
+        width: 200px;
+      }
+    }
+  }
+  .Silver {
+    img {
+      width: 160px;
+    }
+  }
+</style>
