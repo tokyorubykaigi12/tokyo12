@@ -4,6 +4,7 @@ import CallForSponsors from "./CallForSponsors.astro";
 import Sponsor from "../sponsors/Sponsor.astro";
 
 // Silvers
+import AcechildLogoImage from "./logos/as-child.com.svg";
 import CodetaktLogoImage from "./logos/codetakt.com.jpg";
 ---
 
@@ -39,14 +40,31 @@ import CodetaktLogoImage from "./logos/codetakt.com.jpg";
     <div class="silver">
       <!-- <Sponsor
         grade="Silver"
-        label="Custom Sponsor Label"
         company={{
           name: "Company Name",
-          logoImageSrc: "Image.src",
+          logoImageSrc: Image.src,
           link: "https://example.com/",
           description: "Description of the company",
         }}
       /> -->
+      <!-- <Sponsor
+        grade="Silver"
+        company={{
+          name: "フィヨルドブートキャンプ",
+          logoImageSrc: "Image.src", // TODO: Add image
+          link: "https://bootcamp.fjord.jp",
+          description: "フィヨルドブートキャンプは、現場の即戦力になれるプログラミングスクールです。有名書籍の著者や、オープンソースコミュニティで活躍している現役のプログラマーから実践的な内容を学ぶ事ができます。",
+        }}
+      /> -->
+      <Sponsor
+        grade="Silver"
+        company={{
+          name: "エースチャイルド株式会社",
+          logoImageSrc: AcechildLogoImage.src,
+          link: "https://www.as-child.com/",
+          description: "エースチャイルドは子ども達を守るために、子ども達が安心安全に育つことができる社会を実現するために、ITのチカラで明るい未来を作る会社です。 社員全員フルリモートで働いています。",
+        }}
+      />
       <Sponsor
         grade="Silver"
         company={{
