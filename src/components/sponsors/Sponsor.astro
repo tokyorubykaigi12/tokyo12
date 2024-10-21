@@ -1,0 +1,105 @@
+---
+import MiniPanel from "../Layouts/MiniPanel.astro";
+import Logo from "./Logo.astro";
+
+type Company = {
+  logoImageSrc: string;
+  name: string;
+  link: string;
+  description: string;
+};
+
+interface Props {
+  grade: "Ruby" | "Gold" | "Silver";
+  label: string | null;
+  company: Company;
+}
+
+const { grade, label = null, company } = Astro.props;
+---
+
+<div class:list={grade == "Silver" ? "outer" : ""}>
+  <MiniPanel>
+    <div class:list={grade == "Silver" ? "inner-silver" : "inner"}>
+      <Logo grade={grade} company={company} />
+      <div class="description">
+        {label && <div class="label">{label}</div>}
+        <div class="company">
+          <div class="name">
+            <h4>{company.name}</h4>
+          </div>
+          <a href={company.link}>{company.link}</a>
+          <div class="text">
+            {company.description}
+          </div>
+        </div>
+      </div>
+    </div>
+  </MiniPanel>
+</div>
+
+<style>
+  .outer {
+    width: 45%;
+  }
+  @media screen and (width <= 960px) {
+    .outer {
+      width: 100%;
+    }
+
+  }
+
+  .inner {
+    display: flex;
+    gap: 32px;
+  }
+  @media screen and (width <= 720px) {
+    .inner {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  .inner-silver {
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description {
+    .label {
+      display: inline-block;
+      margin-bottom: 16px;
+
+      background-color: #fff;
+      border-radius: 4px;
+      padding: 4px 16px;
+
+      color: #dd451d;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+    }
+
+    .company {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .name {
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 600;
+      }
+
+      a,
+      .text {
+        word-wrap: anywhere;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+      }
+    }
+  }
+</style>
