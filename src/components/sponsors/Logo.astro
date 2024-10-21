@@ -12,42 +12,57 @@ interface Props {
 }
 
 const { grade, company } = Astro.props;
-const RubyLargeSize = 320;
-const RubySmallSize = 240;
-const GoldLargeSize = 240;
-const GoldSmallSize = 200;
-const SilverLargeSize = 160;
-const SilverSmallSize = 160;
+
+const RubyLargeSize = "320px";
+const RubySmallSize = "240px";
+const GoldLargeSize = "240px";
+const GoldSmallSize = "200px";
+const SilverLargeSize = "160px";
+const SilverSmallSize = "160px";
 ---
 
 <div class:list={grade}>
   <img src={company.logoImageSrc} alt={company.name} />
 </div>
 
-<style>
+<style
+  define:vars={{
+    RubyLargeSize,
+    RubySmallSize,
+    GoldLargeSize,
+    GoldSmallSize,
+    SilverLargeSize,
+    SilverSmallSize,
+  }}
+>
   .Ruby {
     img {
-      width: 320px;
+      width: var(--RubyLargeSize);
     }
     @media screen and (width <= 960px) {
       img {
-        width: 240px;
+        width: var(--RubySmallSize);
       }
     }
   }
   .Gold {
     img {
-      width: 240px;
+      width: var(--GoldLargeSize);
     }
     @media screen and (width <= 960px) {
       img {
-        width: 200px;
+        width: var(--GoldSmallSize);
       }
     }
   }
   .Silver {
     img {
-      width: 160px;
+      width: var(--SilverLargeSize);
+    }
+    @media screen and (width <= 960px) {
+      img {
+        width: var(--SilverSmallSize);
+      }
     }
   }
 </style>

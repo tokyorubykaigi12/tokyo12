@@ -1,14 +1,14 @@
 ---
 import Panel from "../Layouts/Panel.astro";
 import CallForSponsors from "./CallForSponsors.astro";
-import Sponsor from "./Sponsor.astro";
+import Sponsor from "../sponsors/Sponsor.astro";
 ---
 
 <Panel title="Sponsors" subtitle="スポンサー">
   <div class="inner">
-    <div class="ruby">
-      <h3>Ruby Sponsors</h3>
-      <Sponsor
+    <!-- <div class="ruby"> -->
+      <!-- <h3>Ruby Sponsors</h3> -->
+      <!-- <Sponsor
         grade="Ruby"
         label="Custom Sponsor Label"
         company={{
@@ -17,11 +17,11 @@ import Sponsor from "./Sponsor.astro";
           link: "https://example.com/",
           description: "Description of the company",
         }}
-      />
+      /> -->
     </div>
-    <div class="gold">
-      <h3>Gold Sponsors</h3>
-      <Sponsor
+    <!-- <div class="gold"> -->
+      <!-- <h3>Gold Sponsors</h3> -->
+      <!-- <Sponsor
         grade="Gold"
         label="Custom Sponsor Label"
         company={{
@@ -30,11 +30,11 @@ import Sponsor from "./Sponsor.astro";
           link: "https://example.com/",
           description: "Description of the company",
         }}
-      />
-    </div>
-    <h3>Silver Sponsors</h3>
-    <div class="silver">
-      <Sponsor
+      /> -->
+    <!-- </div> -->
+    <!-- <h3>Silver Sponsors</h3> -->
+    <!-- <div class="silver"> -->
+      <!-- <Sponsor
         grade="Silver"
         label="Custom Sponsor Label"
         company={{
@@ -43,8 +43,8 @@ import Sponsor from "./Sponsor.astro";
           link: "https://example.com/",
           description: "Description of the company",
         }}
-      />
-    </div>
+      /> -->
+    <!-- </div> -->
     <CallForSponsors />
   </div>
 </Panel>

@@ -1,6 +1,6 @@
 ---
 import MiniPanel from "../Layouts/MiniPanel.astro";
-import Logo from "../sponsors/Logo.astro";
+import Logo from "./Logo.astro";
 
 type Company = {
   logoImageSrc: string;
@@ -46,7 +46,7 @@ const { grade, label = null, company } = Astro.props;
     .outer {
       width: 100%;
     }
-    
+
   }
 
   .inner {
