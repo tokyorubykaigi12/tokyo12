@@ -2,13 +2,16 @@
 import Panel from "../Layouts/Panel.astro";
 import CallForSponsors from "./CallForSponsors.astro";
 import Sponsor from "../sponsors/Sponsor.astro";
+
+// Silvers
+import CodetaktLogoImage from "./logos/codetakt.com.jpg";
 ---
 
 <Panel title="Sponsors" subtitle="スポンサー">
   <div class="inner">
-    <!-- <div class="ruby"> -->
-      <!-- <h3>Ruby Sponsors</h3> -->
-      <!-- <Sponsor
+    <!-- <div class="ruby">
+      <h3>Ruby Sponsors</h3>
+      <Sponsor
         grade="Ruby"
         label="Custom Sponsor Label"
         company={{
@@ -17,11 +20,11 @@ import Sponsor from "../sponsors/Sponsor.astro";
           link: "https://example.com/",
           description: "Description of the company",
         }}
-      /> -->
+      />
     </div>
-    <!-- <div class="gold"> -->
-      <!-- <h3>Gold Sponsors</h3> -->
-      <!-- <Sponsor
+    <div class="gold">
+      <h3>Gold Sponsors</h3>
+      <Sponsor
         grade="Gold"
         label="Custom Sponsor Label"
         company={{
@@ -30,53 +33,63 @@ import Sponsor from "../sponsors/Sponsor.astro";
           link: "https://example.com/",
           description: "Description of the company",
         }}
-      /> -->
-    <!-- </div> -->
-    <!-- <h3>Silver Sponsors</h3> -->
-    <!-- <div class="silver"> -->
+      />
+    </div> -->
+    <h3>Silver Sponsors</h3>
+    <div class="silver">
       <!-- <Sponsor
         grade="Silver"
         label="Custom Sponsor Label"
         company={{
-          logoImageSrc: "Image.src",
           name: "Company Name",
+          logoImageSrc: "Image.src",
           link: "https://example.com/",
           description: "Description of the company",
         }}
       /> -->
-    <!-- </div> -->
+      <Sponsor
+        grade="Silver"
+        company={{
+          name: "株式会社コードタクト",
+          logoImageSrc: CodetaktLogoImage.src,
+          link: "https://codetakt.com/",
+          description:
+            "『総合性×先進性=オンリーワン』の授業支援クラウドです。ネットが遅くても、３クリックでサクサク動き、どんな学びもAI・データの活用で先生の見取りをサポートします。振り返りAI分析、9000以上のテンプレートなど豊富な機能があります。",
+        }}
+      />
+    </div>
     <CallForSponsors />
   </div>
+
+  <style>
+    .inner {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    h3 {
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 43px;
+    }
+
+    .ruby {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .gold {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .silver {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+  </style>
 </Panel>
-
-<style>
-  .inner {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-  }
-
-  h3 {
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 43px;
-  }
-
-  .ruby {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  .gold {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-  }
-
-  .silver {
-    display: flex;
-    gap: 48px;
-    flex-wrap: wrap;
-  }
-</style>
