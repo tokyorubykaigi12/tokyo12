@@ -7,14 +7,45 @@ import XLogoBlackImage from "../../imgs/x-logo-black.png";
 
 interface Props {
   name: string;
-  md5Email: string;
-  githubID: string;
-  xID: string;
+  md5Email?: string;
+  ImageSrc?: string;
+  githubID?: string;
+  xID?: string;
 }
-const { name, md5Email, githubID, xID } = Astro.props;
+const { name, md5Email, ImageSrc, githubID, xID } = Astro.props;
 
 const iconSize = 400;
 ---
+
+<div class="outer">
+  <MiniPanel>
+    <div class="icon">
+      {md5Email && <GravatarImage md5Email={md5Email} size={iconSize} alt={name} />}
+      {ImageSrc && <img src={ImageSrc} alt={name} />}
+    </div>
+    <h3>{name}</h3>
+    <div class="socials">
+      {githubID && (
+        <div class="social github">
+          <img src={GitHubMarkImage.src} /><a
+            href=`https://github.com/${githubID}`
+          >
+            @{githubID}
+          </a>
+        </div>
+      )}
+      {xID && (
+        <div class="social x">
+          <img src={XLogoBlackImage.src} /><a
+            href=`https://x.com/${xID}`
+          >
+            @{xID}
+          </a>
+        </div>
+      )}
+    </div>
+  </MiniPanel>
+</div>
 
 <style>
   .outer {
@@ -51,15 +82,17 @@ const iconSize = 400;
     line-height: 27px;
   }
 
-  .social {
+  .socials {
     line-height: 24px;
     display: flex;
     flex-wrap: wrap;
     gap: 0 24px;
+    align-items: center;
   }
 
   .social {
     display: flex;
+    flex-direction: row;
     align-items: center;
   }
 
@@ -86,26 +119,3 @@ const iconSize = 400;
     }
   }
 </style>
-
-<div class="outer">
-  <MiniPanel>
-    <div class="icon">
-      <GravatarImage md5Email={md5Email} size={400} alt={name} />
-    </div>
-    <h3>{name}</h3>
-    <div class="social">
-      <div class="github">
-        <img src={GitHubMarkImage.src} /><a
-          href=`https://github.com/${githubID}`
-        >
-          @{githubID}
-        </a>
-      </div>
-      <div class="x">
-        <img src={XLogoBlackImage.src} /><a href=`https://x.com/${xID}`>
-          @{xID}
-        </a>
-      </div>
-    </div>
-  </MiniPanel>
-</div>
