@@ -40,7 +40,7 @@ const { grade, label, company } = Astro.props;
 
 <style>
   .outer {
-    width: 45%;
+    width: 46%;
   }
   @media screen and (width <= 960px) {
     .outer {
@@ -52,6 +52,7 @@ const { grade, label, company } = Astro.props;
   .inner {
     display: flex;
     gap: 32px;
+    align-items: flex-start;
   }
   @media screen and (width <= 720px) {
     .inner {
@@ -98,7 +99,14 @@ const { grade, label, company } = Astro.props;
         font-weight: 600;
       }
 
-      a,
+      a {
+        word-wrap: anywhere;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
       .text {
         word-wrap: anywhere;
         font-size: 16px;
