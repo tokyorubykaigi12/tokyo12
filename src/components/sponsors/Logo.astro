@@ -21,7 +21,7 @@ const SilverLargeSize = "160px";
 const SilverSmallSize = "160px";
 ---
 
-<div class:list={grade}>
+<div class:list={["logo", grade]}>
   <img src={company.logoImageSrc} alt={company.name} />
 </div>
 
@@ -35,34 +35,45 @@ const SilverSmallSize = "160px";
     SilverSmallSize,
   }}
 >
+  .logo {
+    background-color: #fff;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
   .Ruby {
-    img {
-      width: var(--RubyLargeSize);
-    }
-    @media screen and (width <= 960px) {
-      img {
-        width: var(--RubySmallSize);
-      }
+    width: var(--RubyLargeSize);
+    height: var(--RubyLargeSize);
+  }
+  @media screen and (width <= 960px) {
+    .Ruby {
+      width: var(--RubySmallSize);
+      height: var(--RubySmallSize);
     }
   }
+
   .Gold {
-    img {
-      width: var(--GoldLargeSize);
-    }
-    @media screen and (width <= 960px) {
-      img {
-        width: var(--GoldSmallSize);
-      }
+    width: var(--GoldLargeSize);
+    height: var(--GoldLargeSize);
+  }
+  @media screen and (width <= 960px) {
+    .Gold {
+      width: var(--GoldSmallSize);
+      height: var(--GoldSmallSize);
     }
   }
+
   .Silver {
-    img {
-      width: var(--SilverLargeSize);
-    }
-    @media screen and (width <= 960px) {
-      img {
-        width: var(--SilverSmallSize);
-      }
+    width: var(--SilverLargeSize);
+    height: var(--SilverLargeSize);
+  }
+  @media screen and (width <= 960px) {
+    .Silver {
+      width: var(--SilverSmallSize);
+      height: var(--SilverSmallSize);
     }
   }
 </style>

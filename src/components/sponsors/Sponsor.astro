@@ -11,11 +11,11 @@ type Company = {
 
 interface Props {
   grade: "Ruby" | "Gold" | "Silver";
-  label: string | null;
+  label?: string;
   company: Company;
 }
 
-const { grade, label = null, company } = Astro.props;
+const { grade, label, company } = Astro.props;
 ---
 
 <div class:list={grade == "Silver" ? "outer" : ""}>
@@ -40,7 +40,7 @@ const { grade, label = null, company } = Astro.props;
 
 <style>
   .outer {
-    width: 45%;
+    width: 46%;
   }
   @media screen and (width <= 960px) {
     .outer {
@@ -52,6 +52,7 @@ const { grade, label = null, company } = Astro.props;
   .inner {
     display: flex;
     gap: 32px;
+    align-items: flex-start;
   }
   @media screen and (width <= 720px) {
     .inner {
@@ -66,8 +67,15 @@ const { grade, label = null, company } = Astro.props;
     flex-direction: column;
     align-items: center;
   }
+  @media screen and (720px <= width <= 960px) {
+    .inner-silver {
+      flex-direction: row;
+    }
+  }
 
   .description {
+    flex: 1;
+
     .label {
       display: inline-block;
       margin-bottom: 16px;
@@ -93,7 +101,14 @@ const { grade, label = null, company } = Astro.props;
         font-weight: 600;
       }
 
-      a,
+      a {
+        word-wrap: anywhere;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
       .text {
         word-wrap: anywhere;
         font-size: 16px;
