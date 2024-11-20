@@ -7,11 +7,25 @@ const { date } = Astro.props;
   .news {
     margin-bottom: 16px;
   }
+
+  .date {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21.25px;
+  }
+
+  .body {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+
+    list-style-position: inside;
+  }
 </style>
 
 <div class="news">
   <MiniPanel>
-    <div>{date}</div>
-    <slot />
+    <div class="date">{date}</div>
+    <div class="body"><slot /></div>
   </MiniPanel>
 </div>
