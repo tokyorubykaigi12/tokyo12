@@ -46,60 +46,87 @@ function isTicketOpen(): boolean {
     }
   }
 
-  .hero .hero-inner .datetime {
-    font-family: "Futura", "Jost", sans-serif;
-    font-weight: 500;
+  .hero .hero-inner .info {
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 
-    font-size: 36px;
-    line-height: 48px;
-    font-weight: 500;
-  }
-  @media screen and (width <= 480px) {
-    .hero .hero-inner .datetime {
-      font-size: 20px;
-      line-height: 26px;
-    }
-  }
-
-  .hero .hero-inner .location {
-    a {
+    .datetime {
       font-family: "Futura", "Jost", sans-serif;
-      font-weight: 600;
-      font-size: 26px;
-      line-height: 36px;
-      color: #fff;
-      text-decoration: none;
+      font-weight: 500;
 
-      display: flex;
-      justify-content: center;
-      gap: 4px;
-      flex-wrap: wrap;
+      font-size: 36px;
+      line-height: 48px;
+      font-weight: 500;
     }
-  }
-  @media screen and (width <= 480px) {
-    .hero .hero-inner .location {
+    @media screen and (width <= 480px) {
+      .datetime {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+
+    .location {
+      a, p {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .inner {
+        .en {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+
+          p {
+            font-family: "Futura", "Jost", sans-serif;
+            font-weight: 500;
+            font-size: 26px;
+            line-height: 36px;
+          }
+          @media screen and (width <= 480px) {
+            p {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+        }
+
+        .ja {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+
+          p {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+          }
+          @media screen and (width <= 480px) {
+            p {
+              font-size: 12px;
+              line-height: 18px;
+            }
+          }
+        }
+      }
+
+    }
+
+    .organizing-team {
       a {
         font-size: 16px;
         line-height: 24px;
+        font-weight: 300;
+        color: #fff;
+        text-decoration: none;
       }
-    }
-  }
-
-  .hero .hero-inner .organizing-team {
-    margin-top: 10px;
-    a {
-      font-size: 16px;
-      line-height: 24px;
-      font-weight: 300;
-      color: #fff;
-      text-decoration: none;
-    }
-  }
-  @media screen and (width <= 480px) {
-    .hero .hero-inner .organizing-team {
-      a {
-        font-size: 12px;
-        line-height: 18px;
+      @media screen and (width <= 480px) {
+        a {
+          font-size: 12px;
+          line-height: 18px;
+        }
       }
     }
   }
@@ -114,17 +141,19 @@ function isTicketOpen(): boolean {
         class="primary-logo"
       />
     </h1>
-
-    <div style="margin-bottom: 16px;">
-      <div class="datetime">2025-01-18 (Sat)</div>
+    <div class="info">
+      <div class="datetime">
+        2025-01-18 (Sat)
+      </div>
       <div class="location">
         <a
-          href="https://salvia.hall-info.jp/about/#access"
-          target="_blank"
-          rel="noopener noreferrer"
+        href="https://salvia.hall-info.jp/about/#access"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inner"
         >
-          <p>Tsurumi Cultural Centre</p>
-          <p>"Salvia Hall"</p>
+          <div class="ja"><p>横浜市鶴見区民文化センター</p><p>サルビアホール</p></div>
+          <div class="en"><p>Tsurumi Cultural Centre</p><p>"Salvia Hall"</p></div>
         </a>
       </div>
       <div class="organizing-team">
@@ -133,9 +162,7 @@ function isTicketOpen(): boolean {
         </a>
       </div>
     </div>
-
     {isTicketOpen() ? <TicketButtonSelling /> : <TicketButtonBefore />}
-
     <div>
       <img src={TriImage.src} alt="" />
     </div>
