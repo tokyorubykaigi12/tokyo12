@@ -5,28 +5,13 @@ import TicketButtonBefore from "./TicketButtonBefore.astro";
 import TicketButtonSelling from "./TicketButtonSelling.astro";
 
 function isTicketOpen(): boolean {
-  const ticketOpenDate = new Date("2024-10-17T14:00:00+09:00");
-
-  const date = new Date();
-  let gmtDate = new Date(date.toUTCString().replace("GMT", ""));
-  const hours = gmtDate.getHours();
-  gmtDate.setHours(hours + 9); // GMT+9
-
-  return gmtDate >= ticketOpenDate;
+  return true
 }
 ---
 
 <style>
   .hero {
     width: 100%;
-  }
-
-  .datetime {
-    font-weight: 500;
-  }
-
-  .location {
-    font-weight: 600;
   }
 
   .hero .hero-inner {
@@ -62,6 +47,9 @@ function isTicketOpen(): boolean {
   }
 
   .hero .hero-inner .datetime {
+    font-family: "Futura", "Jost", sans-serif;
+    font-weight: 500;
+
     font-size: 36px;
     line-height: 48px;
     font-weight: 500;
@@ -75,9 +63,10 @@ function isTicketOpen(): boolean {
 
   .hero .hero-inner .location {
     a {
+      font-family: "Futura", "Jost", sans-serif;
+      font-weight: 600;
       font-size: 26px;
       line-height: 36px;
-      font-weight: 400;
       color: #fff;
       text-decoration: none;
 
