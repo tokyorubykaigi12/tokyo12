@@ -30,6 +30,7 @@ import NaclLogoImage from "./logos/nacl-logo.svg";
 import EsaLogoImage from "./logos/esa.svg";
 import M3CareerLogoImage from "./logos/m3career.svg";
 import Route06LogoImage from "./logos/route06.svg";
+import GifteeLogoImage from "./logos/giftee.png";
 ---
 
 <Panel title="Sponsors" subtitle="スポンサー">
@@ -246,6 +247,7 @@ import Route06LogoImage from "./logos/route06.svg";
       </div>
       <div class="row">
         <Sponsor
+          label="Tools Sponsor"
           grade="Silver"
           company={{
             name: "合同会社esa",
@@ -277,6 +279,16 @@ import Route06LogoImage from "./logos/route06.svg";
             logoImageSrc: Route06LogoImage.src,
           }}
         />
+        <Sponsor
+          grade="Silver"
+          company={{
+            name: "株式会社ギフティ",
+            description:
+              "ギフティは、ギフト市場全体において事業展開を行なっています。機能面と情緒面とのバランスを取りギフトを様々な領域に掛け算しプロダクトを実現する事でギフトを通じキモチが循環する社会の実現を目指しています。",
+            link: "https://giftee.co.jp/",
+            logoImageSrc: GifteeLogoImage.src,
+          }}
+        />
       </div>
       <!-- <div class="row"></div> -->
       <!-- <Sponsor
@@ -300,6 +312,7 @@ import Route06LogoImage from "./logos/route06.svg";
     }
 
     h3 {
+      font-family: "Futura", "Jost", sans-serif;
       font-size: 32px;
       font-weight: 500;
       line-height: 43px;

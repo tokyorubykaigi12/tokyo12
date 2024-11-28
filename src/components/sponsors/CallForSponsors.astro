@@ -1,8 +1,16 @@
 ---
 import MiniPanel from "../Layouts/MiniPanel.astro";
+import ArrowUpRightFromSquareIcon from "../icons/arrow-up-right-from-square.svg";
 ---
 
 <style>
+  .call-for-sponsors {
+    font-family: "Hiragino Kaku Gothic Pro", "Noto Sans JP", sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
   .call-for-sponsors .title {
     display: flex;
     gap: 16px;
@@ -11,17 +19,33 @@ import MiniPanel from "../Layouts/MiniPanel.astro";
 
   .call-for-sponsors .title h3 {
     font-size: 24px;
+    font-weight: 600;
     line-height: 36px;
   }
 
   .call-for-sponsors .title .pill {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+
     height: fit-content;
     border-radius: 4px;
     padding: 4px 16px;
     background-color: #dd451d;
     color: #fff;
-    font-size: 16px;
     vertical-align: middle;
+  }
+
+  .call-for-sponsors .text {
+    font-size: 17px;
+    line-height: 32px;
+
+    .prospectus {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: nowrap;
+    }
   }
 
   .trk12-button {
@@ -33,6 +57,16 @@ import MiniPanel from "../Layouts/MiniPanel.astro";
     color: #000;
     text-decoration: none;
     cursor: pointer;
+
+    .button-inner {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 30px;
+
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
   }
 </style>
 
@@ -42,21 +76,29 @@ import MiniPanel from "../Layouts/MiniPanel.astro";
       <h3>スポンサーシップ募集について</h3>
       <span class="pill">募集中</span>
     </div>
-    <div style="margin-bottom: 16px;">
+    <div class="text">
       <p>東京Ruby会議12ではスポンサー企業さまを募集しています。</p>
-      <p>
+      <div class="prospectus">
         <a
           href="https://tokyorubykaigi12.s3.ap-northeast-1.amazonaws.com/tokyorubykaigi12-sponsorship-prospectus.pdf"
-          target="_blank">募集要項 (PDF)</a
+          target="_blank"
         >
-      </p>
+          募集要項 (PDF)
+        </a><img src={ArrowUpRightFromSquareIcon.src} height="20" />
     </div>
+    </div>
+
     <div>
       <a
         href="https://sponsorships.tokyorubykaigi12.org/conferences/tokyorubykaigi12/sponsorship/new"
         target="_blank"
-        class="trk12-button">スポンサーシップを申込む</a
+        class="trk12-button"
       >
+        <div class="button-inner">
+          <p>スポンサーシップを申込む</p>
+          <img src={ArrowUpRightFromSquareIcon.src} height="20" />
+        </div>
+      </a>
     </div>
   </div>
 </MiniPanel>

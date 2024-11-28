@@ -5,23 +5,29 @@ const { title, subtitle } = Astro.props;
 <style>
   .header {
     display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 20px;
     margin-bottom: 48px;
   }
 
   .header h2 {
+    font-family: "Futura", "Jost", sans-serif;
     font-size: 40px;
     font-weight: 500;
     line-height: 53px;
     vertical-align: middle;
   }
 
-  .header h2 .subtitle {
+  .header .subtitle {
     display: inline-block;
     font-size: 24px;
+    font-weight: 600;
     line-height: 36px;
   }
 </style>
 
 <div class="header">
-  <h2>{title} <span class="subtitle">{subtitle}</span></h2>
+  <h2 lang="en">{title}</h2>
+  <p class="subtitle">{subtitle}</p>
 </div>
