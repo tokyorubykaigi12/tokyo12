@@ -11,8 +11,9 @@ interface Props {
   ImageSrc?: string;
   githubID?: string;
   xID?: string;
+  label?: string;
 }
-const { name, md5Email, ImageSrc, githubID, xID } = Astro.props;
+const { name, md5Email, ImageSrc, githubID, xID, label } = Astro.props;
 
 const iconSize = 400;
 ---
@@ -23,6 +24,7 @@ const iconSize = 400;
       {md5Email && <GravatarImage md5Email={md5Email} size={iconSize} alt={name} />}
       {ImageSrc && <img src={ImageSrc} alt={name} />}
     </div>
+    {label && <div class="label">{label}</div>}
     <h3>{name}</h3>
     <div class="socials">
       {githubID && (
@@ -73,6 +75,21 @@ const iconSize = 400;
         width: 160px;
       }
     }
+  }
+
+  .label {
+    font-family: "Hiragino Kaku Gothic Pro", "Noto Sans JP", sans-serif;
+    display: inline-block;
+    margin-bottom: 16px;
+
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 4px 16px;
+
+    color: #dd451d;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
   }
 
   h3 {
