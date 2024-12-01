@@ -3,7 +3,8 @@ import Layout from "../components/Layouts/Layout.astro";
 import Main from "../components/Layouts/Main.astro";
 import Panel from "../components/Layouts/Panel.astro";
 import Member from "../components/staff/Member.astro";
-import PanelHeader from "../components/Layouts/PanelHeader.astro";
+
+import OkuramasafumiImage from "../components/staff/pics/okuramasafumi.jpg";
 
 const title = "スタッフ | 東京Ruby会議12";
 const twitter_card = "summary_large_image";
@@ -61,6 +62,13 @@ const twitter_card = "summary_large_image";
           name="Minami Ouchi"
           ImageSrc="https://pbs.twimg.com/profile_images/1641413241451716609/ggaJn54v_400x400.jpg"
           xID="mnmouchi"
+        />
+        <Member
+          label="Expo Organizer"
+          name="Masafumi Okura"
+          xID="okuramasafumi"
+          githubID="okuramasafumi"
+          ImageSrc={OkuramasafumiImage.src}
         />
       </div>
     </Panel>
