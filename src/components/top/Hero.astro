@@ -5,7 +5,7 @@ import TicketButtonBefore from "./TicketButtonBefore.astro";
 import TicketButtonSelling from "./TicketButtonSelling.astro";
 
 function isTicketOpen(): boolean {
-  return true
+  return true;
 }
 ---
 
@@ -68,7 +68,8 @@ function isTicketOpen(): boolean {
     }
 
     .location {
-      a, p {
+      a,
+      p {
         color: #fff;
         text-decoration: none;
       }
@@ -78,6 +79,7 @@ function isTicketOpen(): boolean {
           display: flex;
           justify-content: center;
           flex-wrap: wrap;
+          gap: 4px;
 
           p {
             font-family: "Futura", "Jost", sans-serif;
@@ -97,6 +99,7 @@ function isTicketOpen(): boolean {
           display: flex;
           justify-content: center;
           flex-wrap: wrap;
+          gap: 2px;
 
           p {
             font-weight: 500;
@@ -111,7 +114,6 @@ function isTicketOpen(): boolean {
           }
         }
       }
-
     }
 
     .organizing-team {
@@ -142,18 +144,20 @@ function isTicketOpen(): boolean {
       />
     </h1>
     <div class="info">
-      <div class="datetime">
-        2025-01-18 (Sat)
-      </div>
+      <div class="datetime">2025/1/18</div>
       <div class="location">
         <a
-        href="https://salvia.hall-info.jp/about/#access"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner"
+          href="https://salvia.hall-info.jp/about/#access"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inner"
         >
-          <div class="ja"><p>横浜市鶴見区民文化センター</p><p>サルビアホール</p></div>
-          <div class="en"><p>Tsurumi Cultural Center</p><p>"Salvia Hall"</p></div>
+          <div class="ja">
+            <p>横浜市鶴見区民文化センター</p><p>サルビアホール</p>
+          </div>
+          <div class="en">
+            <p>Tsurumi Cultural Center</p><p>"Salvia Hall"</p>
+          </div>
         </a>
       </div>
       <div class="organizing-team">
