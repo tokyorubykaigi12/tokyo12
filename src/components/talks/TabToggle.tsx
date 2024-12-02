@@ -21,14 +21,14 @@ export default function Tabs() {
           onClick={() => handleClick('fri')}
           className={isSelected('fri') ? 'selected' : 'default'}
         >
-          前夜祭 2025/1/17 (Fri.)
+          前夜祭 2025/1/17
         </button>
         <button
           type="button"
           onClick={() => handleClick('sat')}
           className={isSelected('sat') ? 'selected' : 'default'}
         >
-          2025/1/18 (Sat.)
+          2025/1/18
         </button>
       </div>
     </>

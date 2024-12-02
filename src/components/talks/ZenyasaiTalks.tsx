@@ -12,15 +12,15 @@ export default function ZenyasaiTalks() {
     <>
       <div class="talks">
         <Talk speaker={{
-          name: 'Masafumi Okura',
+          name: 'おおくらまさふみ',
           GitHubId: 'okuramasafumi',
           XId: 'okuramasafumi',
           ImageSrc: OkuramasafumiImage.src,
         }} session={{
-          id: 1, // 2024/10/30 19:04:37
+          id: 1,
           title: "Alba: Why, How and What's So Interesting",
           introduction: (<p>
-          "AlbaというJSONシリアライザのgemを作成・保守しています。Rubyで開発をしているとユーザーの使い勝手について考えることが多くなりますね。ここでの使い勝手というのは例えばブロックを使うことで柔軟になるAPIなどを含みますが、全体的な「良さ」、使っていて何か気持ちが良い、という感覚も含んだものです。
+          AlbaというJSONシリアライザのgemを作成・保守しています。Rubyで開発をしているとユーザーの使い勝手について考えることが多くなりますね。ここでの使い勝手というのは例えばブロックを使うことで柔軟になるAPIなどを含みますが、全体的な「良さ」、使っていて何か気持ちが良い、という感覚も含んだものです。
           AlbaはRubyプログラマにとってなるべく使いやすく直感的であるように設計されており、そのための工夫を多数含んでいます。この発表ではAlbaが生まれた経緯を振り返りつつ、Rubyistにとって興味深いであろう実装上のおもしろポイントをご紹介します。また、自作のライブラリを広く使ってもらうために行ったことなどもご紹介できればと思います。</p>)
         }} />
         <Talk speaker={{
@@ -28,7 +28,7 @@ export default function ZenyasaiTalks() {
           GitHubId: 'S-H-GAMELINKS',
           ImageSrc: 'https://avatars.githubusercontent.com/u/26062441'
         }} session={{
-          id: 1, // 2024/10/30 15:33:11
+          id: 2,
           title: 'ゆるゆるMastodon 鯖缶生活',
           introduction: (<>
             <p>2017年からRubyとMasotodonとともに暮らしている一人の鯖缶(Mastodonのサーバー管理者)の暮らしぶりをお話しします。</p>
@@ -42,11 +42,11 @@ export default function ZenyasaiTalks() {
           XId: 'udzura',
           GitHubId: 'udzura',
         }} session={{
-          id: 1, // 2024/11/01 19:49:29
+          id: 3,
           title: '超入門WebAssembly ~Rubyのコードを眺めて完全に理解しよう~',
           introduction: (<>
             <p>WebAssemblyはブラウザを飛び越えた大きな可能性を持つ技術で、Rubyをはじめ様々な言語でWebAssemblyバイナリを出力可能にする対応が進んでいます。その一方、WebAssemblyを動かすランタイム自体も様々なものがあり、Goのwazero、SwiftのWasmKitといった純粋に特定の言語で実装されたものも増えてきました。</p>
-            <p>ところで、筆者は""Wardite""という名前の、Rubyに組み込み可能なWebAssemblyのランタイムを作っています。Warditeは以下のコンセプトで絶賛開発中です。</p>
+            <p>ところで、筆者は"Wardite"という名前の、Rubyに組み込み可能なWebAssemblyのランタイムを作っています。Warditeは以下のコンセプトで絶賛開発中です。</p>
             <ul>
               <li>Pure Rubyで、外部GemやC拡張の依存なしで実装</li>
               <li>Fully RBS Annotated</li>
@@ -54,7 +54,7 @@ export default function ZenyasaiTalks() {
               <li>利用上十分なパフォーマンス</li>
             </ul>
             <p>このトークでは、Warditeの内部のRubyのコードを通して、WebAssembly Coreにはどのような仕様があるのか、WASI（WebAssembly System Interface）とは何であるのかについて理解が深まる話をします。そして言語ランタイム、具体的にはWebAssemblyのVMを作るためにどのような実装を行ってきたかを解説します。</p>
-            <p>また、Warditeの現在の開発状況や課題、将来のゴールなどを、デモも交えながらお話しします。"</p>
+            <p>また、Warditeの現在の開発状況や課題、将来のゴールなどを、デモも交えながらお話しします。</p>
           </>)
         }} />
         <Talk speaker={{
@@ -63,12 +63,12 @@ export default function ZenyasaiTalks() {
           XId: 'funwarioisii',
           ImageSrc: 'https://avatars.githubusercontent.com/u/20943066'
         }} session={{
-          id: 1, // 2024/11/04 19:07:15
+          id: 4,
           title: 'Discord bot ふ〇っしーとの出会いと別れ',
           introduction: (<>
             <p>2010年代前半はChatOps全盛期でした。いまでもチャットボットは開発されていますか？</p>
             <p>10年前に比べて私たちが働く環境は大きく変わりました。チャットツールでのやり取りがメインになり、リモートワークで働く人が増え、エンジニア以外も複数のSaaSを利用するようになりました。この変化を組織の成長に変えるため、2024年に新たにチャットボットのフレームワークを開発しました。</p>
-            <p>本セッションでは discordrb というgemをベースにしたチャットボットフレームワークの作成時に考慮したこととその設計を紹介します。そして使っているうちに生まれた設計の歪みと新しい設計への移行、そして使われなくなっていった機能を紹介します。"</p>
+            <p>本セッションでは discordrb というgemをベースにしたチャットボットフレームワークの作成時に考慮したこととその設計を紹介します。そして使っているうちに生まれた設計の歪みと新しい設計への移行、そして使われなくなっていった機能を紹介します。</p>
           </>)
         }} />
         <Talk speaker={{
@@ -77,7 +77,7 @@ export default function ZenyasaiTalks() {
           XId: 'ohbarye',
           ImageSrc: 'https://avatars.githubusercontent.com/u/1811616'
         }} session={{
-          id: 1, // 2024/11/05 0:50:11
+          id: 5,
           title: 'Git scrapingで始める継続的なデータ追跡',
           introduction: (<>
             <p>Webサイトから得られる情報はアクセス時点のスナップショットに過ぎませんが、時間とともに変化する情報を継続的に追跡したり、新たな情報を検知して認知したいシーンがあります。</p>
@@ -91,7 +91,7 @@ export default function ZenyasaiTalks() {
           XId: 'ryosk7',
           ImageSrc: 'https://avatars.githubusercontent.com/u/17314812'
         }} session={{
-          id: 1, // 2024/11/05 17:22:02
+          id: 6,
           title: 'PicoRubyと暮らす、シェアハウスハック',
           introduction: (<p>2024年8月にWiFi対応を果たしたPicoRubyを活用し、シェアハウスの生活を便利にするIoTデバイスを開発しました。スマートロック、洗濯機・乾燥機の稼働チェッカー、トイレットペーパー購入ボタンなど、日常の小さな不便を解消するアイデアとその実装方法を紹介します。PicoRubyと共に、シェアハウス生活をより快適にするハックをお届けします。</p>)
         }} />
@@ -101,7 +101,7 @@ export default function ZenyasaiTalks() {
           XId: 'mametter',
           ImageSrc: 'https://avatars.githubusercontent.com/u/21557'
         }} session={{
-          id: 1, // 2024/11/05 18:48:53
+          id: 7,
           title: 'An OptCarrot Retrospective',
           introduction: (
             <p>東京Ruby会議11で発表されたRubyのベンチマークプログラムOptCarrotを振り返ります。OptCarrotは、Rubyを高速化する開発者を駆り立てるためのエサとして作られ、狙い通りに多くのプログラム最適化マニアに愛され、Rubyの最適化を牽引しました。OptCarrotに釣られてできた成果を駆け足で紹介し、OptCarrotの評価・功罪を議論します。</p>
@@ -113,7 +113,7 @@ export default function ZenyasaiTalks() {
           XId: 'ydah_',
           ImageSrc: 'https://avatars.githubusercontent.com/u/13041216'
         }} session={{
-          id: 1, // 2024/11/05 20:42:13
+          id: 8,
           title: 'Rubyでつくるパケットキャプチャツール',
           introduction: (<>
             <p>皆さんは、日々のシステム開発の中で「ソケットを扱う」ということを意識したことがあるでしょうか？</p>
@@ -130,7 +130,7 @@ export default function ZenyasaiTalks() {
           XId: 'makicamel',
           ImageSrc: 'https://avatars.githubusercontent.com/u/30112374'
         }} session={{
-          id: 1, // 2024/11/05 21:23:21
+          id: 9,
           title: 'Thinking about a map for Rails applications',
           introduction: (<>
             <p>Rails アプリケーションではモデルで概念を表します。この概念はいくつくらいあるのでしょうか。</p>
@@ -148,7 +148,7 @@ export default function ZenyasaiTalks() {
           XId: 'alpaca_tc',
           ImageSrc: 'https://avatars.githubusercontent.com/u/1688137'
         }} session={{
-          id: 1, // 2024/11/05 22:23:10
+          id: 10,
           title: "Rubyと暮らし、OSSに貢献し、登壇する ── 半年間続けた「OSSやっていきの集い」の成果と学び",
           introduction: (
             <>
