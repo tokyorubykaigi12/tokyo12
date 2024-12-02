@@ -1,0 +1,112 @@
+.talk {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+
+  padding: 24px;
+  border-radius: 24px;
+  background-color: #F5F5F5;
+
+  .speaker-icon {
+    img {
+      border-radius: 12px;
+      height: auto;
+      width: 240px;
+    }
+  }
+  @media screen and (width <= 720px) {
+    .speaker-icon {
+      img {
+        width: 160px;
+      }
+    }
+  }
+
+  .description {
+    .session-title {
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .session-introduction {
+      text-wrap: wrap;
+      margin-bottom: 16px;
+
+      li {
+        margin-left: 24px;
+      }
+    }
+
+    .line {
+      border: 1px solid #AEAEB2;
+      margin-bottom: 16px;
+    }
+
+    .speaker-name {
+      font-family: "Futura", "Jost", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+
+      margin-bottom: 16px;
+    }
+
+    .speaker-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 24px;
+
+      a {
+        font-size: 20px;
+        line-height: 32px;
+        text-decoration: none;
+        vertical-align: top;
+      }
+      @media screen and (width <= 480px) {
+        a {
+          font-size: 16px;
+        }
+      }
+
+      .social-x, .social-github {
+        display: flex;
+        align-items: center;
+      }
+
+      .social-x {
+        img {
+          width: 24px;
+          height: 24px;
+          margin: 0 8px 0 0;
+        }
+        @media screen and (width <= 480px) {
+          img {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+
+      .social-github {
+        img {
+          width: 30px;
+          height: 30px;
+          margin: 0 8px 0 0;
+        }
+        @media screen and (width <= 480px) {
+          img {
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (width <= 960px) {
+  .talk {
+    flex-direction: column;
+    align-items: center;
+  }
+}

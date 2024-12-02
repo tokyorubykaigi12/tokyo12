@@ -1,0 +1,36 @@
+import { useStore } from '@nanostores/preact';
+import { selectedTabStore } from './tabStore';
+
+import Talk from "./Talk"
+import './Talks.css'
+
+export default function ZenyasaiTalks() {
+  const $tab = useStore(selectedTabStore);
+  return $tab === 'fri' ? (
+    <>
+      <div class="talks">
+        <Talk speaker={{
+          name: 'Uchio Kondo',
+          ImageSrc: 'https://avatars.githubusercontent.com/u/91011',
+          XId: 'udzura',
+          GitHubId: 'udzura',
+        }} session={{
+          id: 1,
+          title: '超入門WebAssembly ~Rubyのコードを眺めて完全に理解しよう~',
+          introduction: (<>
+            <p>WebAssemblyはブラウザを飛び越えた大きな可能性を持つ技術で、Rubyをはじめ様々な言語でWebAssemblyバイナリを出力可能にする対応が進んでいます。その一方、WebAssemblyを動かすランタイム自体も様々なものがあり、Goのwazero、SwiftのWasmKitといった純粋に特定の言語で実装されたものも増えてきました。</p>
+            <p>ところで、筆者は""Wardite""という名前の、Rubyに組み込み可能なWebAssemblyのランタイムを作っています。Warditeは以下のコンセプトで絶賛開発中です。</p>
+            <ul>
+              <li>Pure Rubyで、外部GemやC拡張の依存なしで実装</li>
+              <li>Fully RBS Annotated</li>
+              <li>WASI preview 1 対応</li>
+              <li>利用上十分なパフォーマンス</li>
+            </ul>
+            <p>このトークでは、Warditeの内部のRubyのコードを通して、WebAssembly Coreにはどのような仕様があるのか、WASI（WebAssembly System Interface）とは何であるのかについて理解が深まる話をします。そして言語ランタイム、具体的にはWebAssemblyのVMを作るためにどのような実装を行ってきたかを解説します。</p>
+            <p>また、Warditeの現在の開発状況や課題、将来のゴールなどを、デモも交えながらお話しします。"</p>
+          </>)
+        }} />
+      </div>
+    </>
+  ) : <></>
+}
