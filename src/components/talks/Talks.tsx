@@ -7,6 +7,7 @@ import './Talks.css'
 export default function Talks() {
   const $tab = useStore(selectedTabStore);
   return $tab === 'sat' ? (<>
+      {/* <Talk speaker={{}} session={{}} /> */}
     <Talk speaker={{
       name: 'Shugo Maeda',
       ImageSrc: 'https://avatars.githubusercontent.com/u/34552',
