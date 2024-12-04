@@ -32,9 +32,8 @@ export default function Talk({speaker, session}: Props) {
         </div>
         <div class="description">
           <h3 class="session-title">
-            <a href={`tokyo12/talks/${session.id}`}>
-              {session.title}
-            </a>
+            {/* <a href={`tokyo12/talks/${session.id}`}></a> */}
+            {session.title}
           </h3>
           <div class="session-introduction">
             {session.introduction}
