@@ -51,7 +51,7 @@ export default function Talks() {
       name: 'tokujiros',
       GitHubId: 'xord',
       XId: 'tokujiros',
-      ImageSrc: 'https://avatars.githubusercontent.com/u/776014'
+      ImageSrc: 'https://pbs.twimg.com/profile_images/1609795760023035904/EwWIRSR3_400x400.jpg'
     }} session={{
       id: 14,
       title: 'ゼロからの、2Dレトロゲームエンジンの作り方',
