@@ -31,8 +31,8 @@ export default function ZenyasaiTalks() {
           id: 2,
           title: 'ゆるゆるMastodon 鯖缶生活',
           introduction: (<>
-            <p>2017年からRubyとMasotodonとともに暮らしている一人の鯖缶(Mastodonのサーバー管理者)の暮らしぶりをお話しします。</p>
-            <p>Railsを触りはじめたばかりの頃に登場したMasotodonを軽率にはじめ、運用していく中でRubyやRailsを学び、やらかしに対応し、Rubyの開発版(masterブランチ)とMastodonの開発版(mainブランチ)でMasotodonを運用するに至ったり、いかにしてRubyやMastodon にパッチを投げるようになったのかの歴史をお話ししたいと思います。</p>
+            <p>2017年からRubyとMastodonとともに暮らしている一人の鯖缶(Mastodonのサーバー管理者)の暮らしぶりをお話しします。</p>
+            <p>Railsを触りはじめたばかりの頃に登場したMastodonを軽率にはじめ、運用していく中でRubyやRailsを学び、やらかしに対応し、Rubyの開発版(masterブランチ)とMastodonの開発版(mainブランチ)でMastodonを運用するに至ったり、いかにしてRubyやMastodon にパッチを投げるようになったのかの歴史をお話ししたいと思います。</p>
             <p>またゆるゆると鯖缶業を続けていくなかでどうスキルアップしていったのかや、エンジニアとして新しい技術を素振りできる砂場を持つことの楽しさについてもお話しします。</p>
             </>)
         }} />
