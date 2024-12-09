@@ -7,15 +7,28 @@ import NewsTemplate from './Template.astro';
 const newsEntries = await getCollection('news');
 ---
 
-<Panel title="News">
-  {
-    Promise.all(newsEntries.map(async (entry) => {
-      const { Content } = await entry.render();
-      return (
-        <NewsTemplate date={entry.data.date}>
-          <Content />
-        </NewsTemplate>
-      );
-    }))
+<style>
+  .inner {
+    display: flex;
+    flex-direction: column;
   }
+</style>
+
+<Panel title="News">
+  <div class="inner">
+    {
+      Promise.all(newsEntries.map(async (entry, index) => {
+        const { Content } = await entry.render();
+        return (
+          <div style={{
+            order: -index,
+          }}>
+            <NewsTemplate date={entry.data.date}>
+              <Content />
+            </NewsTemplate>
+          </div>
+        );
+      }))
+    }
+  </div>
 </Panel>
