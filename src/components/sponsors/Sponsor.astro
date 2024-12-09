@@ -27,11 +27,12 @@ const { grade, label, company } = Astro.props;
         <div class="company">
           <div class="name">
             <h4>{company.name}</h4>
+            <div class="line" />
           </div>
-          <a href={company.link}>{company.link}</a>
           <div class="text">
             {company.description}
           </div>
+          <a href={company.link}>{company.link}</a>
         </div>
       </div>
     </div>
@@ -102,6 +103,11 @@ const { grade, label, company } = Astro.props;
         font-size: 24px;
         line-height: 36px;
         font-weight: 600;
+
+        .line {
+          margin-top: 8px;
+          border: 1px solid #AEAEB2;
+        }
       }
 
       a {
