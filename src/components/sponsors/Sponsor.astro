@@ -18,38 +18,25 @@ interface Props {
 const { grade, label, company } = Astro.props;
 ---
 
-<div class:list={grade == "Silver" ? "outer" : ""}>
-  <MiniPanel>
-    <div class:list={grade == "Silver" ? "inner-silver" : "inner"}>
-      <Logo grade={grade} company={company} />
-      <div class="description">
-        {label && <div class="label">{label}</div>}
-        <div class="company">
-          <div class="name">
-            <h4>{company.name}</h4>
-            <div class="line" />
-          </div>
-          <div class="text">
-            {company.description}
-          </div>
-          <a href={company.link}>{company.link}</a>
+<MiniPanel>
+  <div class:list={grade == "Silver" ? "inner-silver" : "inner"}>
+    <Logo grade={grade} company={company} />
+    <div class="description">
+      {label && <div class="label">{label}</div>}
+      <div class="company">
+        <div class="name">
+          <h4>{company.name}</h4>
         </div>
+        <div class="text">
+          {company.description}
+        </div>
+        <a href={company.link}>{company.link}</a>
       </div>
     </div>
-  </MiniPanel>
-</div>
+  </div>
+</MiniPanel>
 
 <style>
-  .outer {
-    width: 46%;
-  }
-  @media screen and (width <= 960px) {
-    .outer {
-      width: 100%;
-    }
-
-  }
-
   .inner {
     display: flex;
     gap: 32px;
@@ -100,13 +87,13 @@ const { grade, label, company } = Astro.props;
       gap: 16px;
 
       .name {
-        font-size: 24px;
-        line-height: 36px;
-        font-weight: 600;
+        padding-bottom: 8px;
+        border-bottom: solid 1px #AEAEB2;
 
-        .line {
-          margin-top: 8px;
-          border: 1px solid #AEAEB2;
+        h4 {
+          font-size: 24px;
+          line-height: 36px;
+          font-weight: 600;
         }
       }
 
@@ -115,7 +102,7 @@ const { grade, label, company } = Astro.props;
         font-family: "Futura", "Jost", sans-serif;
         font-size: 16px;
         line-height: 24px;
-        text-decoration: none;
+        text-decoration: underline;
       }
 
       .text {
