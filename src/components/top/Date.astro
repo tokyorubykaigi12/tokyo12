@@ -1,0 +1,41 @@
+---
+import Panel from "../Layouts/Panel.astro";
+import MiniPanel from "../Layouts/MiniPanel.astro";
+
+import PinIcon from "../icons/pin_black.svg";
+---
+
+<style>
+  li {}
+</style>
+
+<Panel title="Date">
+  <div class="date">
+    <p>2025.1.18 (Sat.) 11:00~18:00</p>
+    <p>Door Open 10:30</p>
+    <div class="venue">
+      <img src={PinIcon.src} alt="map pin" height="24" />
+      <a href="https://salvia.hall-info.jp/about/#access">横浜市鶴見区文化センター サルビアホール</a>
+    </div>
+  </div>
+  <MiniPanel>
+    <div class="header">
+      <h3>前夜祭について</h3>
+    </div>
+    <div class="body">
+      チケットを購入した方のみご参加いただけます。詳細は <a href="https://connpass.com/event/339170/">connpass のイベント</a>をご確認ください。
+      <ul>
+        <li>
+          日時：2025.1.17 (Fri.)
+          <ul>
+            <li>第一部：クリエイティブコーディングワークショップ 16:00~</li>
+            <li>第二部：新年往復！ 駅伝トーク（鶴見中継所まで） 18:00~</li>
+          </ul>
+        </li>
+        <li>
+          会場：株式会社アンドパッド 東京都千代田区神田練塀町300 住友不動産秋葉原駅前ビル 9階
+        </li>
+      </ul>
+    </div>
+  </MiniPanel>
+</Panel>
