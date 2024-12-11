@@ -11,7 +11,7 @@ import LivesenseLogoImage from "./logos/livesense.co.jp.svg";
 // Golds
 import SmarthrLogoImage from "./logos/SmartHR.svg";
 import TimeeLogoImage from "./logos/timee.svg";
-import AndpadLogoImage from "./logos/andpad.png";
+import AndpadLogoImage from "./logos/ANDPAD.svg";
 import HacomonoLogoImage from "./logos/hacomono.svg";
 
 // Silvers
@@ -21,22 +21,23 @@ import AcechildLogoImage from "./logos/as-child.com.svg";
 import EnishitechLogoImage from "./logos/enishi-tech.com.svg";
 import ESMLogoImage from "./logos/esm.svg";
 import SmartbankLogoImage from "./logos/smartbank.co.jp.svg";
-import CodetaktLogoImage from "./logos/codetakt.com.jpg";
+import CodetaktLogoImage from "./logos/codetakt.com.svg";
 import BloomoLogoImage from "./logos/bloomo.svg";
-import StoresLogoImage from "./logos/stores.png";
+import StoresLogoImage from "./logos/STORES.svg";
 import LinkersLogoImage from "./logos/linkers.net.svg";
 import MovLogoImage from "./logos/mov.svg";
 import NaclLogoImage from "./logos/nacl-logo.svg";
 import EsaLogoImage from "./logos/esa.svg";
 import M3CareerLogoImage from "./logos/m3career.svg";
 import Route06LogoImage from "./logos/route06.svg";
-import GifteeLogoImage from "./logos/giftee.png";
-import AnglersLogoImage from "./logos/anglers.png"
+import GifteeLogoImage from "./logos/giftee.svg";
+import AnglersLogoImage from "./logos/anglers.svg";
 import RniLogoImage from "./logos/rni.svg";
 ---
 
 <Panel title="Sponsors" subtitle="スポンサー">
   <div class="inner">
+    <CallForSponsors />
     <div class="ruby">
       <h3>Ruby Sponsors</h3>
       <Sponsor
@@ -113,9 +114,9 @@ import RniLogoImage from "./logos/rni.svg";
         }}
       />
     </div>
-    <h3>Silver Sponsors</h3>
     <div class="silver">
-      <div class="row">
+      <h3>Silver Sponsors</h3>
+      <div class="inner">
         <Sponsor
           grade="Silver"
           company={{
@@ -136,8 +137,6 @@ import RniLogoImage from "./logos/rni.svg";
               "フィヨルドブートキャンプは、現場の即戦力になれるプログラミングスクールです。有名書籍の著者や、オープンソースコミュニティで活躍している現役のプログラマーから実践的な内容を学ぶ事ができます。",
           }}
         />
-      </div>
-      <div class="row">
         <Sponsor
           grade="Silver"
           company={{
@@ -158,8 +157,6 @@ import RniLogoImage from "./logos/rni.svg";
               "えにしテックは、ソフトウェア開発、コンサルティング、教育の領域でサービスを提供します。ひと、プロセス、プロダクトがいきいきとするように。縁を紡ぐ技術の力で、お客様のビジネスの継続的な進化を支援します。",
           }}
         />
-      </div>
-      <div class="row">
         <Sponsor
           grade="Silver"
           company={{
@@ -180,8 +177,6 @@ import RniLogoImage from "./logos/rni.svg";
             logoImageSrc: SmartbankLogoImage.src,
           }}
         />
-      </div>
-      <div class="row">
         <Sponsor
           grade="Silver"
           company={{
@@ -202,8 +197,6 @@ import RniLogoImage from "./logos/rni.svg";
             logoImageSrc: BloomoLogoImage.src,
           }}
         />
-      </div>
-      <div class="row">
         <Sponsor
           grade="Silver"
           company={{
@@ -224,8 +217,6 @@ import RniLogoImage from "./logos/rni.svg";
             logoImageSrc: LinkersLogoImage.src,
           }}
         />
-      </div>
-      <div class="row">
         <Sponsor
           grade="Silver"
           company={{
@@ -246,8 +237,6 @@ import RniLogoImage from "./logos/rni.svg";
             logoImageSrc: NaclLogoImage.src,
           }}
         />
-      </div>
-      <div class="row">
         <Sponsor
           label="Tools Sponsor"
           grade="Silver"
@@ -269,8 +258,6 @@ import RniLogoImage from "./logos/rni.svg";
             logoImageSrc: M3CareerLogoImage.src,
           }}
         />
-      </div>
-      <div class="row">
         <Sponsor
           grade="Silver"
           company={{
@@ -291,8 +278,6 @@ import RniLogoImage from "./logos/rni.svg";
             logoImageSrc: GifteeLogoImage.src,
           }}
         />
-      </div>
-      <div class="row">
         <Sponsor
           grade="Silver"
           company={{
@@ -311,26 +296,24 @@ import RniLogoImage from "./logos/rni.svg";
             logoImageSrc: RniLogoImage.src,
           }}
         />
+        <!-- <Sponsor
+          grade="Silver"
+          company={{
+            name: "",
+            description: "",
+            link: "",
+            logoImageSrc: "",
+          }}
+        /> -->
       </div>
-      <!-- <div class="row"></div> -->
-      <!-- <Sponsor
-        grade="Silver"
-        company={{
-          name: "",
-          description: "",
-          link: "",
-          logoImageSrc: "",
-        }}
-      /> -->
     </div>
-    <CallForSponsors />
   </div>
 
   <style>
     .inner {
       display: flex;
       flex-direction: column;
-      gap: 48px;
+      gap: 32px;
     }
 
     h3 {
@@ -343,25 +326,32 @@ import RniLogoImage from "./logos/rni.svg";
     .ruby {
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 24px;
     }
 
     .gold {
       display: flex;
       flex-direction: column;
-      gap: 48px;
+      gap: 24px;
     }
 
     .silver {
       display: flex;
-      flex-wrap: wrap;
-      gap: 48px;
+      flex-direction: column;
+      gap: 24px;
 
-      .row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 48px;
+      .inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 24px;
+        row-gap: 24px;
+      }
+      @media screen and (width <= 960px) {
+        .inner {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
       }
     }
   </style>

@@ -8,32 +8,19 @@ import ArrowUpRightFromSquareIcon from "../icons/arrow-up-right-from-square.svg"
     font-family: "Hiragino Kaku Gothic Pro", "Noto Sans JP", sans-serif;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 16px;
   }
 
   .call-for-sponsors .title {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
+    width: 100%;
+    border-bottom: solid 1px #AEAEB2;
+    padding-bottom: 8px;
 
-  .call-for-sponsors .title h3 {
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 36px;
-  }
-
-  .call-for-sponsors .title .pill {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-
-    height: fit-content;
-    border-radius: 4px;
-    padding: 4px 16px;
-    background-color: #dd451d;
-    color: #fff;
-    vertical-align: middle;
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 36px;
+    }
   }
 
   .call-for-sponsors .text {
@@ -70,11 +57,10 @@ import ArrowUpRightFromSquareIcon from "../icons/arrow-up-right-from-square.svg"
   }
 </style>
 
-<MiniPanel backgroundColor="#f5f5f5">
+<MiniPanel backgroundColor="#fcece8">
   <div class="call-for-sponsors">
     <div class="title">
       <h3>スポンサーシップ募集について</h3>
-      <span class="pill">募集中</span>
     </div>
     <div class="text">
       <p>東京Ruby会議12ではスポンサー企業さまを募集しています。</p>
