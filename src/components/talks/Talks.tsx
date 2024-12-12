@@ -3,6 +3,7 @@ import { selectedTabStore } from './tabStore';
 
 import Talk from "./Talk"
 import './Talks.css'
+import PrimaryLogoRedImage from "../../imgs/primary_logo_red.png";
 
 export default function Talks() {
   const $tab = useStore(selectedTabStore);
@@ -149,6 +150,16 @@ export default function Talks() {
         <p>DNSは1980年代に発明された名前解決システムながら，その通信プロトコルは開発当初とほぼ変わらない形で，今日までインターネットを支えつづけています．一方で，かつて平和だったインターネットには多くのならず者が出没するようになりました．通信の改竄・盗聴，そしてDDoS――DNSはいま脅威に曝されているのです．</p>
         <p>これらの当初は想定されていなかった脅威に対抗すべく，DNSにはさまざまなセキュリティ拡張が提案されてきました．この数年では，伝統的な平文のプロトコルから暗号化に対応した新しいプロトコルへアップグレードをする枠組みもIETFで文書化され，DNSは漸進的に安全なプロトコルへ移行してゆくと期待されています．</p>
         <p>本発表では，DNSのプライバシーを改善する近年のプロトコル拡張について解説します．また，これらの新たなプロトコルをRubyから使えるようにするには，DNSライブラリにどのような拡張が必要であるかを議論します．また，暗号化DNSプロトコルが依拠しているQUICやHTTP/3を扱うRubyライブラリの開発について，発表者の取り組みを紹介します．</p>
+      </>)
+    }} />
+    <Talk speaker={{
+      name: 'Regional.rb Organizers',
+      ImageSrc: PrimaryLogoRedImage.src,
+    }} session={{
+      id: 21,
+      title: 'Regional.rb Organizers on stage!',
+      introduction: (<>
+        東京圏の地域.rbオーガナイザーが集結！
       </>)
     }} />
   </div>) : <></>
