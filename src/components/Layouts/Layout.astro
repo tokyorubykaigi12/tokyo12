@@ -55,6 +55,7 @@ const { title, twitter_card } = Astro.props;
   </head>
   <body>
     <Header />
+    <slot name="hero" />
     <main>
       <slot />
     </main>
