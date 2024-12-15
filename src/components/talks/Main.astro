@@ -1,13 +1,13 @@
 ---
-import Panel from '../Layouts/Panel.astro';
+import Panel from "../Layouts/Panel.astro";
 
-import TabToggle from './TabToggle';
-import Talks from './Talks';
-import ZenyasaiTalks from './ZenyasaiTalks';
+import TabToggle from "./TabToggle";
+import Talks from "./Talks";
+import ZenyasaiTalks from "./ZenyasaiTalks";
 ---
 
 <Panel title="Talks">
-  <TabToggle client:load/>
-  <Talks client:load />
-  <ZenyasaiTalks client:load/>
+  <TabToggle client:only />
+  <Talks client:only />
+  <ZenyasaiTalks client:only />
 </Panel>
