@@ -111,7 +111,7 @@ export default function Talks() {
       </>)
     }} />
     <Talk speaker={{
-      name: '髙谷雄貴',
+      name: 'buty4649',
       GitHubId: 'buty4649',
       XId: 'buty4649',
       ImageSrc: 'https://avatars.githubusercontent.com/u/1275643'
