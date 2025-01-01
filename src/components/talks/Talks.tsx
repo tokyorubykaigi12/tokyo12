@@ -157,7 +157,7 @@ export default function Talks() {
       ImageSrc: PrimaryLogoRedImage.src,
     }} session={{
       id: 21,
-      title: 'Regional.rb Organizers on stage!',
+      title: 'Regional.rb and the Tokyo Metropolis',
       introduction: (<>
         東京圏の地域.rbオーガナイザーが集結！
       </>)
