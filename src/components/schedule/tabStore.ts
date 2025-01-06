@@ -10,7 +10,7 @@ function getDefaultValue(): Tab {
     return value;
   }
 
-  return "fri"; // for temporary
+  return "sat";
 }
 
 export const selectedTabStore = atom<Tab>(getDefaultValue());
