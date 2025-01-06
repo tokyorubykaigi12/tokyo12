@@ -1,5 +1,3 @@
-import type { ComponentChildren } from 'preact';
-
 import './Talk.css';
 
 import GitHubMarkImage from "../../imgs/github-mark.png";
