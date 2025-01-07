@@ -1,0 +1,309 @@
+---
+import Talk from "./Talk.astro";
+// tsx
+import ScrollSync from "./ScrollSync";
+---
+
+<style>
+  .schedule {
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .timetable{
+      .stick {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        overflow-x: auto;
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        ::-webkit-scrollbar{
+          display: none;
+        }
+
+        table {
+          border-top-left-radius: 24px;
+          border-top-right-radius: 24px;
+          border-top: 1px solid #AEAEB2;
+          border-right: 1px solid #AEAEB2;
+          border-left: 1px solid #AEAEB2;
+
+          thead tr:first-child th:first-child {
+            border-top-left-radius: 24px;
+            border-right: 1px solid #AEAEB2;
+          }
+          thead tr:first-child th:last-child {
+            border-top-right-radius: 24px;
+            border-left: 1px solid #AEAEB2;
+          }
+        }
+      }
+
+      .body {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+
+        table {
+          border-bottom-left-radius: 24px;
+          border-bottom-right-radius: 24px;
+          border-bottom: 1px solid #AEAEB2;
+          border-right: 1px solid #AEAEB2;
+          border-left: 1px solid #AEAEB2;
+          tbody tr:last-child td:first-child {
+            border-bottom-left-radius: 24px;
+            border-right: 1px solid #AEAEB2;
+          }
+          tbody tr:last-child td:last-child {
+            border-bottom-right-radius: 24px;
+          }
+        }
+      }
+
+      table {
+        width: 100%;
+        min-width: 1028px;
+
+        border-spacing: 0;
+
+        .tt-no-left-line {
+          border-left: none !important;
+        }
+
+        tbody tr td:first-child {
+          border-right: 1px solid #AEAEB2;
+          background-color: #F5F5F5;
+        }
+
+        tbody tr td:nth-child(3) {
+          border-left: 1px solid #AEAEB2;
+        }
+
+        td {
+          border-top: 1px solid #AEAEB2;
+          padding: 24px;
+        }
+
+        th {
+          font-family: "Futura", "Jost", sans-serif;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 27px;
+          text-align: center;
+
+          padding: 24px;
+        }
+
+        .corner{
+          background-color: #fff;
+          color: #fff;
+        }
+      }
+      @media screen and (width <= 720px) {
+        table {
+          min-width: 688px;
+        }
+      }
+      @media screen and (width <= 520px) {
+        table {
+          min-width: 488px;
+        }
+      }
+      @media screen and (width <= 320px) {
+        table {
+          min-width: 320px;
+        }
+      }
+
+      .tt-4 {
+        color: #fff;
+        background: #DD451D;
+      }
+
+      .tt-3 {
+        color: #fff;
+        background: #000;
+      }
+
+      .tt-time, .tt-timerange {
+        font-family: "Futura", "Jost", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 21.25px;
+        text-align: center;
+
+        white-space: nowrap;
+        width: 1%;
+      }
+
+      .tt-event {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 32px;
+        text-align: left;
+      }
+
+      .tt-4, .tt-3, .tt-event, .tt-talk {
+        width: 50%;
+      }
+    }
+  }
+</style>
+
+<div class="schedule">
+  <div class="timetable">
+    <ScrollSync client:only stick body>
+      <div class="stick" id="stick" slot="stick">
+        <table>
+          <thead>
+            <tr>
+              <th class="tt-time corner">00:00</th>
+              <th class="tt-4">4F Hall</th>
+              <th class="tt-3">3F Gallery</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="body" id="body" slot="body">
+        <table>
+          <tbody>
+            <tr>
+              <td class="tt-time">10:30</td>
+              <td class="tt-event">Door Open</td>
+              <td class="tt-no-left-line"/>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>11:00</p>
+                <p>-</p>
+                <p>11:10</p>
+              </td>
+              <td class="tt-event">Opening</td>
+              <td class="tt-event" />
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>11:10</p>
+                <p>-</p>
+                <p>11:50</p>
+              </td>
+              <td class="tt-talk">Keynote1</td>
+              <td class="tt-event" />
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>11:50</p>
+                <p>-</p>
+                <p>13:10</p>
+              </td>
+              <td class="tt-event">Lunch</td>
+              <td class="tt-no-left-line" />
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>13:10</p>
+                <p>-</p>
+                <p>13:30</p>
+              </td>
+              <td class="tt-talk"></td>
+              <td class="tt-talk"></td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>13:35</p>
+                <p>-</p>
+                <p>13:55</p>
+              </td>
+              <td class="tt-talk"></td>
+              <td class="tt-talk"></td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>14:00</p>
+                <p>-</p>
+                <p>14:30</p>
+              </td>
+              <td class="tt-talk"></td>
+              <td class="tt-talk"></td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>14:30</p>
+                <p>-</p>
+                <p>15:00</p>
+              </td>
+              <td class="tt-event">Break</td>
+              <td class="tt-no-left-line" />
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>15:00</p>
+                <p>-</p>
+                <p>15:20</p>
+              </td>
+              <td class="tt-talk"></td>
+              <td class="tt-talk"></td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>15:25</p>
+                <p>-</p>
+                <p>15:45</p>
+              </td>
+              <td class="tt-talk"></td>
+              <td class="tt-talk"></td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>15:50</p>
+                <p>-</p>
+                <p>16:30</p>
+              </td>
+              <td class="tt-talk"></td>
+              <td class="tt-no-left-line" />
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>16:30</p>
+                <p>-</p>
+                <p>16:50</p>
+              </td>
+              <td class="tt-event">Break</td>
+              <td class="tt-no-left-line" />
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>16:50</p>
+                <p>-</p>
+                <p>17:05</p>
+              </td>
+              <td class="tt-event">Sponsor Talks</td>
+              <td class="tt-event" />
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>17:05</p>
+                <p>-</p>
+                <p>17:45</p>
+              </td>
+              <td class="tt-talk">Keynote2</td>
+              <td class="tt-event" />
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>17:50</p>
+                <p>-</p>
+                <p>18:15</p>
+              </td>
+              <td class="tt-event">Closing</td>
+              <td class="tt-event" />
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ScrollSync>
+  </div>
+</div>
