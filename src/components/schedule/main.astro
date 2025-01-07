@@ -1,22 +1,10 @@
 ---
-import { getCollection } from "astro:content";
 // Astro
 import Panel from "../Layouts/Panel.astro";
 import TimeTable from "./TimeTable.astro";
 import Zenyasai from "./Zenyasai.astro";
 // tsx
 import TabToggle from "./TabToggle";
-// images
-import OkuramasafumiImage from "../staff/pics/okuramasafumi.jpg";
-import PrimaryLogoRedImage from "../../imgs/primary_logo_red.png";
-
-const talkEntries = await getCollection("talks");
-
-talkEntries.filter((entry)=>entry.data.session.id === 1)[0].data.speaker.ImageSrc = OkuramasafumiImage.src;
-talkEntries.filter((entry)=>entry.data.session.id === 21)[0].data.speaker.ImageSrc = PrimaryLogoRedImage.src;
-
-const mainTalkEntries = talkEntries.filter((entry) => entry.data.session.id > 10);
-const zenyasaiTalkEntries = talkEntries.filter((entry) => entry.data.session.id <= 10);
 ---
 
 <Panel title="Schedule">

@@ -1,7 +1,15 @@
 ---
+import { getCollection } from "astro:content";
+// astro
 import Talk from "./Talk.astro";
 // tsx
 import ScrollSync from "./ScrollSync";
+// img
+import PrimaryLogoRedImage from "../../imgs/primary_logo_red.png";
+// talks
+const talkEntries = await getCollection("talks");
+talkEntries.filter((entry)=>entry.data.session.id === 21)[0].data.speaker.ImageSrc = PrimaryLogoRedImage.src;
+const talks = talkEntries.filter((entry) => entry.data.session.id > 10);
 ---
 
 <style>
