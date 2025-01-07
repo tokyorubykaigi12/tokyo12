@@ -1,0 +1,175 @@
+---
+import GitHubMarkImage from "../../imgs/github-mark.png";
+import XLogoBlackImage from '../../imgs/x-logo-black.png';
+
+type Speaker = {
+  name: string;
+  ImageSrc: string;
+  XId?: string;
+  GitHubId?: string;
+}
+
+type Session = {
+  id: number;
+  title: string;
+}
+
+interface Props {
+  speaker: Speaker;
+  session: Session;
+}
+const {speaker, session} = Astro.props;
+---
+<style>
+  .talk {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+
+    padding: 24px;
+    border-radius: 24px;
+    background-color: #f5f5f5;
+
+    .speaker-icon {
+      img {
+        border-radius: 12px;
+        height: auto;
+        width: 240px;
+      }
+    }
+    @media screen and (width <= 720px) {
+      .speaker-icon {
+        img {
+          width: 160px;
+        }
+      }
+    }
+
+    .description {
+      width: 100%;
+
+      .session-title {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .session-introduction {
+        text-wrap: wrap;
+        margin-bottom: 16px;
+
+        li {
+          margin-left: 24px;
+        }
+      }
+
+      .line {
+        border: 1px solid #aeaeb2;
+        margin-bottom: 16px;
+      }
+
+      .speaker-name {
+        font-family: "Futura", "Jost", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+
+        margin-bottom: 16px;
+      }
+
+      .speaker-socials {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 24px;
+
+        a {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 21px;
+          text-decoration: none;
+          vertical-align: top;
+        }
+        @media screen and (width <= 480px) {
+          a {
+            font-size: 16px;
+          }
+        }
+
+        .social-x,
+        .social-github {
+          display: flex;
+          align-items: center;
+        }
+
+        .social-x {
+          img {
+            width: 24px;
+            height: 24px;
+            margin: 0 8px 0 0;
+          }
+          @media screen and (width <= 480px) {
+            img {
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+
+        .social-github {
+          img {
+            width: 30px;
+            height: 30px;
+            margin: 0 8px 0 0;
+          }
+          @media screen and (width <= 480px) {
+            img {
+              width: 18px;
+              height: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (width <= 960px) {
+    .talk {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
+<div class="talk">
+  <div class="speaker-icon">
+    <img src={speaker.ImageSrc} alt="Speaker" />
+  </div>
+  <div class="description">
+    <h3 class="session-title">
+      {/* <a href={`tokyo12/talks/${session.id}`}></a> */}
+      {session.title}
+    </h3>
+    <div class="session-introduction">
+      <slot />
+    </div>
+    <div class="line" />
+    <h4 class="speaker-name">{speaker.name}</h4>
+    <div class="speaker-socials">
+      {speaker.GitHubId && (
+        <div class="social-github">
+          <img src={GitHubMarkImage.src} alt="github logo"/>
+          <a href={`https://github.com/${speaker.GitHubId}`}>
+            @{speaker.GitHubId}
+          </a>
+        </div>
+      )}
+      {speaker.XId && (
+        <div class="social-x">
+          <img src={XLogoBlackImage.src} alt="x logo"/>
+          <a href={`https://x.com/${speaker.XId}`}>
+            @{speaker.XId}
+          </a>
+        </div>
+      )}
+    </div>
+  </div>
+</div>
