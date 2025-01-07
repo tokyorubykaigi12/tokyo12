@@ -5,13 +5,17 @@ import Talk from "./Talk.astro";
 // tsx
 import ScrollSync from "./ScrollSync";
 // img
-import PrimaryLogoRedImage from "../../imgs/primary_logo_red.png";
+import SymbolImage from "../../imgs/symbol_red.png";
 // talks
 const talkEntries = await getCollection("talks");
-talkEntries.filter((entry)=>entry.data.session.id === 21)[0].data.speaker.ImageSrc = PrimaryLogoRedImage.src;
-const talks = talkEntries.filter((entry) => entry.data.session.id > 10);
+talkEntries.filter((entry)=>entry.data.session.id === 21)[0].data.speaker.ImageSrc = SymbolImage.src;
+const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((entry)=>{
+  return {
+    session: entry.data.session,
+    speaker: entry.data.speaker,
+  };
+});
 ---
-
 <style>
   .schedule {
     padding: 24px 0;
@@ -216,8 +220,12 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10);
                 <p>-</p>
                 <p>13:30</p>
               </td>
-              <td class="tt-talk"></td>
-              <td class="tt-talk"></td>
+              <td class="tt-talk">
+                <Talk talks={talks} id={11}/>
+              </td>
+              <td class="tt-talk">
+                <Talk talks={talks} id={12}/>
+              </td>
             </tr>
             <tr>
               <td class="tt-timerange">
@@ -225,8 +233,12 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10);
                 <p>-</p>
                 <p>13:55</p>
               </td>
-              <td class="tt-talk"></td>
-              <td class="tt-talk"></td>
+              <td class="tt-talk">
+                <Talk talks={talks} id={15}/>
+              </td>
+              <td class="tt-talk">
+                <Talk talks={talks} id={17}/>
+              </td>
             </tr>
             <tr>
               <td class="tt-timerange">
@@ -234,8 +246,12 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10);
                 <p>-</p>
                 <p>14:30</p>
               </td>
-              <td class="tt-talk"></td>
-              <td class="tt-talk"></td>
+              <td class="tt-talk">
+                <Talk talks={talks} id={19}/>
+              </td>
+              <td class="tt-talk">
+                <Talk talks={talks} id={16}/>
+              </td>
             </tr>
             <tr>
               <td class="tt-timerange">
@@ -252,8 +268,12 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10);
                 <p>-</p>
                 <p>15:20</p>
               </td>
-              <td class="tt-talk"></td>
-              <td class="tt-talk"></td>
+              <td class="tt-talk">
+                <Talk talks={talks} id={14}/>
+              </td>
+              <td class="tt-talk">
+                <Talk talks={talks} id={13}/>
+              </td>
             </tr>
             <tr>
               <td class="tt-timerange">
@@ -261,8 +281,12 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10);
                 <p>-</p>
                 <p>15:45</p>
               </td>
-              <td class="tt-talk"></td>
-              <td class="tt-talk"></td>
+              <td class="tt-talk">
+                <Talk talks={talks} id={18}/>
+              </td>
+              <td class="tt-talk">
+                <Talk talks={talks} id={20}/>
+              </td>
             </tr>
             <tr>
               <td class="tt-timerange">
@@ -270,8 +294,10 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10);
                 <p>-</p>
                 <p>16:30</p>
               </td>
-              <td class="tt-talk"></td>
-              <td class="tt-no-left-line" />
+              <td class="tt-talk">
+                <Talk talks={talks} id={21}/>
+              </td>
+              <td class="tt-talk" />
             </tr>
             <tr>
               <td class="tt-timerange">
@@ -285,15 +311,6 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10);
             <tr>
               <td class="tt-timerange">
                 <p>16:50</p>
-                <p>-</p>
-                <p>17:05</p>
-              </td>
-              <td class="tt-event">Sponsor Talks</td>
-              <td class="tt-event" />
-            </tr>
-            <tr>
-              <td class="tt-timerange">
-                <p>17:05</p>
                 <p>-</p>
                 <p>17:45</p>
               </td>
