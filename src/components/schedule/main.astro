@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 // Astro
 import Talk from "./Talk.astro";
 import Panel from "../Layouts/Panel.astro";
@@ -9,6 +10,15 @@ import Schedule from "./Schedule";
 // images
 import ArrowUpRightFromSquare from '../icons/arrow-up-right-from-square.svg';
 import OkuramasafumiImage from "../staff/pics/okuramasafumi.jpg";
+import PrimaryLogoRedImage from "../../imgs/primary_logo_red.png";
+
+const talkEntries = await getCollection("talks");
+
+talkEntries.filter((entry)=>entry.data.session.id === 1)[0].data.speaker.ImageSrc = OkuramasafumiImage.src;
+talkEntries.filter((entry)=>entry.data.session.id === 21)[0].data.speaker.ImageSrc = PrimaryLogoRedImage.src;
+
+const mainTalkEntries = talkEntries.filter((entry) => entry.data.session.id > 10);
+const zenyasaiTalkEntries = talkEntries.filter((entry) => entry.data.session.id <= 10);
 ---
 <style>
   .schedule {
@@ -200,38 +210,134 @@ import OkuramasafumiImage from "../staff/pics/okuramasafumi.jpg";
           <tbody>
           <tr>
             <td class="tt-time">10:30</td>
-            <td class="tt-event">Door Open / 受付開始</td>
+            <td class="tt-event">Door Open</td>
             <td class="tt-no-left-line"/>
+          </tr>
+          <tr>
+            <td class="tt-timerange">
+              <p>11:00</p>
+              <p>-</p>
+              <p>11:10</p>
+            </td>
+            <td class="tt-event">Opening</td>
+            <td class="tt-event" />
           </tr>
           <tr>
             <td class="tt-timerange">
               <p>11:10</p>
               <p>-</p>
-              <p>11:45</p>
+              <p>11:50</p>
             </td>
-            <td class="tt-talk">
-              <Talk speaker={{
-                name: '前田 修吾',
-                ImageSrc: 'https://avatars.githubusercontent.com/u/34552',
-                XId: 'shugomaeda',
-                GitHubId: 'shugo',
-              }} session={{
-                keynote: true,
-                id: 11,
-                title: 'Ruby製テキストエディタでの生活',
-              }} />
+            <td class="tt-talk">Keynote1</td>
+            <td class="tt-event" />
+          </tr>
+          <tr>
+            <td class="tt-timerange">
+              <p>11:50</p>
+              <p>-</p>
+              <p>13:10</p>
             </td>
-            <td class="tt-talk">
-              <Talk speaker={{
-                name: 'ぺん！',
-                GitHubId: 'tompng',
-                XId: 'tompng',
-                ImageSrc: 'https://avatars.githubusercontent.com/u/1780201'
-              }} session={{
-                id: 12,
-                title: '全てが同期する! Railsとフロントエンドのシームレスな連携の再考',
-              }} />
+            <td class="tt-event">Lunch</td>
+            <td class="tt-no-left-line" />
+          </tr>
+          <tr>
+            <td class="tt-timerange">
+              <p>13:10</p>
+              <p>-</p>
+              <p>13:30</p>
             </td>
+            <td class="tt-talk"></td>
+            <td class="tt-talk"></td>
+          </tr>
+          <tr>
+            <td class="tt-timerange">
+              <p>13:35</p>
+              <p>-</p>
+              <p>13:55</p>
+            </td>
+            <td class="tt-talk"></td>
+            <td class="tt-talk"></td>
+          </tr>
+          <tr>
+            <td class="tt-timerange">
+              <p>14:00</p>
+              <p>-</p>
+              <p>14:30</p>
+            </td>
+            <td class="tt-talk"></td>
+            <td class="tt-talk"></td>
+          </tr>
+          <tr>
+            <td class="tt-timerange">
+              <p>14:30</p>
+              <p>-</p>
+              <p>15:00</p>
+            </td>
+            <td class="tt-event">Break</td>
+            <td class="tt-no-left-line" />
+          </tr>
+          <tr>
+            <td class="tt-timerange">
+              <p>15:00</p>
+              <p>-</p>
+              <p>15:20</p>
+            </td>
+            <td class="tt-talk"></td>
+            <td class="tt-talk"></td>
+          </tr>
+          <tr>
+            <td class="tt-timerange">
+              <p>15:25</p>
+              <p>-</p>
+              <p>15:45</p>
+            </td>
+            <td class="tt-talk"></td>
+            <td class="tt-talk"></td>
+          </tr>
+          <tr>
+            <td class="tt-timerange">
+              <p>15:50</p>
+              <p>-</p>
+              <p>16:30</p>
+            </td>
+            <td class="tt-talk"></td>
+            <td class="tt-no-left-line" />
+          </tr>
+          <tr>
+            <td class="tt-timerange">
+              <p>16:30</p>
+              <p>-</p>
+              <p>16:50</p>
+            </td>
+            <td class="tt-event">Break</td>
+            <td class="tt-no-left-line" />
+          </tr>
+          <tr>
+            <td class="tt-timerange">
+              <p>16:50</p>
+              <p>-</p>
+              <p>17:05</p>
+            </td>
+            <td class="tt-event">Sponsor Talks</td>
+            <td class="tt-event" />
+          </tr>
+          <tr>
+            <td class="tt-timerange">
+              <p>17:05</p>
+              <p>-</p>
+              <p>17:45</p>
+            </td>
+            <td class="tt-talk">Keynote2</td>
+            <td class="tt-event" />
+          </tr>
+          <tr>
+            <td class="tt-timerange">
+              <p>17:50</p>
+              <p>-</p>
+              <p>18:15</p>
+            </td>
+            <td class="tt-event">Closing</td>
+            <td class="tt-event" />
           </tr>
           </tbody>
         </table>
@@ -266,27 +372,124 @@ import OkuramasafumiImage from "../staff/pics/okuramasafumi.jpg";
         <table>
           <tbody>
             <tr>
-              <td class="tt-time">10:30</td>
-              <td class="tt-event">Door Open / 受付開始</td>
+              <td class="tt-time">16:00</td>
+              <td class="tt-event">クリエイティブコーディングワークショップ</td>
+            </tr>
+            <tr>
+              <td class="tt-time">17:45</td>
+              <td class="tt-event">Door Open</td>
             </tr>
             <tr>
               <td class="tt-timerange">
-                <p>11:10</p>
+                <p>18:00</p>
                 <p>-</p>
-                <p>11:45</p>
+                <p>18:10</p>
               </td>
-              <td class="tt-talk">
-                <Talk speaker={{
-                  name: 'おおくらまさふみ',
-                  GitHubId: 'okuramasafumi',
-                  XId: 'okuramasafumi',
-                  ImageSrc: OkuramasafumiImage.src,
-                }} session={{
-                  keynote: true,
-                  id: 1,
-                  title: "Alba: Why, How and What's So Interesting",
-                }}/>
+              <td class="tt-event">Opening</td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>18:10</p>
+                <p>-</p>
+                <p>18:25</p>
               </td>
+              <td class="tt-event">クリエイティブコーディング発表会</td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>18:25</p>
+                <p>-</p>
+                <p>18:30</p>
+              </td>
+              <td class="tt-talk">1区 5m</td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>18:30</p>
+                <p>-</p>
+                <p>18:50</p>
+              </td>
+              <td class="tt-talk">2区 20m</td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>18:50</p>
+                <p>-</p>
+                <p>19:00</p>
+              </td>
+              <td class="tt-talk">3区 10m</td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>19:00</p>
+                <p>-</p>
+                <p>19:05</p>
+              </td>
+              <td class="tt-talk">4区 5m</td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>19:05</p>
+                <p>-</p>
+                <p>19:25</p>
+              </td>
+              <td class="tt-talk">5区 20m</td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>19:25</p>
+                <p>-</p>
+                <p>19:40</p>
+              </td>
+              <td class="tt-event">Break</td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>19:40</p>
+                <p>-</p>
+                <p>20:00</p>
+              </td>
+              <td class="tt-talk">6区 20m</td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>20:00</p>
+                <p>-</p>
+                <p>20:05</p>
+              </td>
+              <td class="tt-talk">7区 5m</td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>20:05</p>
+                <p>-</p>
+                <p>20:15</p>
+              </td>
+              <td class="tt-talk">8区 15m</td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>20:15</p>
+                <p>-</p>
+                <p>20:35</p>
+              </td>
+              <td class="tt-talk">9区 20m</td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>20:35</p>
+                <p>-</p>
+                <p>20:40</p>
+              </td>
+              <td class="tt-talk">10区 5m</td>
+            </tr>
+            <tr>
+              <td class="tt-timerange">
+                <p>20:40</p>
+                <p>-</p>
+                <p>20:50</p>
+              </td>
+              <td class="tt-event">Closing</td>
             </tr>
           </tbody>
         </table>
