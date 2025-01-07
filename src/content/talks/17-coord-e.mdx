@@ -1,0 +1,19 @@
+---
+speaker:
+  name: Hiromi Ogawa
+  GitHubId: coord-e
+  XId: coord_e
+  ImageSrc: https://avatars.githubusercontent.com/u/16184855
+session:
+  id: 17
+  title: Writing PDFs in Ruby DSL
+---
+<p>Portable Document Format (PDF) は、広く使われているドキュメント交換のためのファイル形式です。PDF を日常的に利用している人でも、自分で1から PDF を作成したことがある人は少ないのではないでしょうか？</p>
+<p>この発表では、そんな身近でありながら謎めいた PDF を出力する簡単なプログラムを実装する流れを紹介します。レギュレーションは次の通り:</p>
+<ul>
+<li>出力した PDF が Adobe Acrobat Reader で開ける</li>
+<li>消費メモリが書くドキュメントの大きさに依存しない（ストリーミング）</li>
+<li>Ruby DSL を使う</li>
+</ul>
+<p>PDF の構造について簡単に解説しながら、まずは PDF の内部構造を反映した低レベルな DSL を構築します。DSL による適度な抽象化は PDF の構造の理解を助けるでしょう。そして、もちろん Ruby は DSL の構築にぴったりですが、今回のようにデータ形式のストリーミング生成を行う場合は特に相性が良いのです。その後、低レベル DSL の上に抽象度を高めた DSL を構築し、よりわかりやすく使いやすい API を模索します。</p>
+<p>発表を通して、Ruby DSL によるデータ構造を介さない抽象化のたのしみを共有します。きっとあなたも日常の抽象化に Ruby DSL を取り入れたくなるでしょう。</p>
