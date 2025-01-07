@@ -7,6 +7,24 @@ const newsCollection = defineCollection({
   })
 });
 
+const talksCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    speaker: z.object({
+      name: z.string(),
+      GitHubId: z.string().optional(),
+      XId: z.string().optional(),
+      ImageSrc: z.string(),
+    }),
+    session: z.object({
+      id: z.number(),
+      keynote: z.boolean().optional(),
+      title: z.string(),
+    })
+  })
+})
+
 export const collections = {
-  'news': newsCollection
+  'news': newsCollection,
+  'talks': talksCollection,
 }
