@@ -3,39 +3,156 @@ import Panel from "../Layouts/Panel.astro";
 import MiniPanel from "../Layouts/MiniPanel.astro";
 
 import PinIcon from "../icons/pin_black.svg";
+import ArrowUpRightFromSquareIcon from "../icons/arrow-up-right-from-square.svg";
 ---
 
 <style>
-  li {}
+  .date {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    margin-bottom: 24px;
+
+    .time {
+      font-family: "Futura", "Jost", sans-serif;
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 47.81px;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+    }
+
+    .start {
+      font-family: "Futura", "Jost", sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 31.88px;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+    }
+
+    .venue {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 12px;
+
+      a {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 36px;
+        text-align: center;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+    }
+  }
+
+  .zenyasai {
+    .header {
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #AEAEB2;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+    }
+
+    .body {
+      p {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 32px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      ul {
+        padding-left: 16px;
+
+        li {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 32px;
+          text-align: left;
+          text-underline-position: from-font;
+          text-decoration-skip-ink: none;
+        }
+      }
+    }
+  }
+
+  .connpass {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+
+    a {
+      background-color: #fff;
+
+      padding: 16px 24px;
+      border: 1px solid #AEAEB2;
+      border-radius: 4px;
+
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      text-decoration: none;
+    }
+  }
 </style>
 
 <Panel title="Date">
   <div class="date">
-    <p>2025.1.18 (Sat.) 11:00~18:00</p>
-    <p>Door Open 10:30</p>
+    <p class="time">2025.1.18 (Sat.) 11:00〜18:00</p>
+    <p class="start">Door Open 10:30</p>
     <div class="venue">
-      <img src={PinIcon.src} alt="map pin" height="24" />
+      <img src={PinIcon.src} alt="map pin" height="20" />
       <a href="https://salvia.hall-info.jp/about/#access">横浜市鶴見区文化センター サルビアホール</a>
     </div>
   </div>
-  <MiniPanel>
-    <div class="header">
-      <h3>前夜祭について</h3>
-    </div>
-    <div class="body">
-      チケットを購入した方のみご参加いただけます。詳細は <a href="https://connpass.com/event/339170/">connpass のイベント</a>をご確認ください。
-      <ul>
-        <li>
-          日時：2025.1.17 (Fri.)
-          <ul>
-            <li>第一部：クリエイティブコーディングワークショップ 16:00~</li>
-            <li>第二部：新年往復！ 駅伝トーク（鶴見中継所まで） 18:00~</li>
-          </ul>
-        </li>
-        <li>
-          会場：株式会社アンドパッド 東京都千代田区神田練塀町300 住友不動産秋葉原駅前ビル 9階
-        </li>
-      </ul>
-    </div>
-  </MiniPanel>
+  <div class="zenyasai">
+    <MiniPanel backgroundColor="#FCECE8">
+      <div class="header">
+        <h3>前夜祭について</h3>
+      </div>
+      <div class="body">
+        <p>チケットを購入した方のみご参加いただけます。詳細は <a href="https://connpass.com/event/339170/">connpass のイベント</a>をご確認ください。</p>
+        <ul>
+          <li>
+            日時：2025.1.17 (Fri.)
+            <ul>
+              <li>第一部：クリエイティブコーディングワークショップ 16:00~</li>
+              <li>第二部：新年往復！ 駅伝トーク（鶴見中継所まで） 18:00~</li>
+            </ul>
+          </li>
+          <li>
+            会場：株式会社アンドパッド 東京都千代田区神田練塀町300 住友不動産秋葉原駅前ビル 9階
+          </li>
+        </ul>
+      </div>
+      <div class="connpass">
+        <a href="https://connpass.com/event/339170/">詳細を確認する（connpass）<img src={ArrowUpRightFromSquareIcon.src} height="16" /></a>
+      </div>
+    </MiniPanel>
+  </div>
 </Panel>
