@@ -6,9 +6,15 @@ import Talk from "./Talk.astro";
 import ScrollSync from "./ScrollSync";
 // img
 import SymbolImage from "../../imgs/symbol_red.png";
+import EagletmtImage from "../../imgs/eagletmt.jpg";
+import JhawthornImage from "../../imgs/jhawthorn.jpg";
 // talks
 const talkEntries = await getCollection("talks");
+
 talkEntries.filter((entry)=>entry.data.session.id === 21)[0].data.speaker.ImageSrc = SymbolImage.src;
+talkEntries.filter((entry)=>entry.data.session.id === 22)[0].data.speaker.ImageSrc = EagletmtImage.src;
+talkEntries.filter((entry)=>entry.data.session.id === 23)[0].data.speaker.ImageSrc = JhawthornImage.src;
+
 const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((entry)=>{
   return {
     session: entry.data.session,
@@ -202,7 +208,9 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
                 <p>-</p>
                 <p>11:50</p>
               </td>
-              <td class="tt-talk">Keynote1</td>
+              <td class="tt-talk">
+                <Talk talks={talks} id={23}/>
+              </td>
               <td class="tt-event" />
             </tr>
             <tr>
@@ -314,7 +322,9 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
                 <p>-</p>
                 <p>17:45</p>
               </td>
-              <td class="tt-talk">Keynote2</td>
+              <td class="tt-talk">
+                <Talk talks={talks} id={22}/>
+              </td>
               <td class="tt-event" />
             </tr>
             <tr>
