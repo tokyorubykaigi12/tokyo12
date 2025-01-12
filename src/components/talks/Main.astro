@@ -1,13 +1,68 @@
 ---
-import Panel from '../Layouts/Panel.astro';
+import { getCollection } from "astro:content";
+// astro
+import Panel from "../Layouts/Panel.astro";
+import Talk from "./Talk.astro";
+// tsx
+import TabToggle from "./TabToggle";
+import Talks from "./Talks";
+// img
+import OkuramasafumiImage from "../staff/pics/okuramasafumi.jpg";
+import PrimaryLogoRedImage from "../../imgs/primary_logo_red.png";
 
-import TabToggle from './TabToggle';
-import Talks from './Talks';
-import ZenyasaiTalks from './ZenyasaiTalks';
+const talkEntries = await getCollection("talks");
+
+talkEntries.filter((entry)=>entry.data.session.id === 1)[0].data.speaker.ImageSrc = OkuramasafumiImage.src;
+talkEntries.filter((entry)=>entry.data.session.id === 21)[0].data.speaker.ImageSrc = PrimaryLogoRedImage.src;
+
+const mainTalkEntries = talkEntries.filter((entry) => entry.data.session.id > 10);
+const zenyasaiTalkEntries = talkEntries.filter((entry) => entry.data.session.id <= 10);
+
+const sortedMainTalkEntries = mainTalkEntries.sort((a, b) => a.data.session.id - b.data.session.id);
+const sortedZenyasaiTalkEntries = zenyasaiTalkEntries.sort((a, b) => a.data.session.id - b.data.session.id);
 ---
 
+<style>
+  .talks {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+</style>
+
 <Panel title="Talks">
-  <TabToggle client:load/>
-  <Talks client:load />
-  <ZenyasaiTalks client:load/>
+  <TabToggle client:only />
+  <Talks client:only main zenyasai>
+    <div class="talks" slot="main">
+      {
+        Promise.all(sortedMainTalkEntries.map(async (entry) => {
+          const { Content } = await entry.render();
+          return (
+            <Talk
+              speaker={entry.data.speaker}
+              session={entry.data.session}
+            >
+              <Content />
+            </Talk>
+          );
+        }))
+      }
+    </div>
+    <div class="talks" slot="zenyasai">
+      {
+        Promise.all(sortedZenyasaiTalkEntries.map(async (entry) => {
+          const { Content } = await entry.render();
+          return (
+            <Talk
+              speaker={entry.data.speaker}
+              session={entry.data.session}
+            >
+              <Content />
+            </Talk>
+          );
+        }))
+      }
+    </div>
+  </Talks>
 </Panel>

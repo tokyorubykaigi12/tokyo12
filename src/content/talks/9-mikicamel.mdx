@@ -1,0 +1,17 @@
+---
+speaker:
+  name: makicamel
+  GitHubId: makicamel
+  XId: makicamel
+  ImageSrc: https://avatars.githubusercontent.com/u/30112374
+session:
+  id: 9
+  title: Thinking about a map for Rails applications
+---
+<p>Rails アプリケーションではモデルで概念を表します。この概念はいくつくらいあるのでしょうか。</p>
+<p>話者が勤務する会社の rails stats ではモデルは 1,345 クラスあります（2024 年 11 月現在）。人間が全てを理解するにはつらい数ですが、全てのモデルを理解してから開発を始めるという人は多くないでしょう。</p>
+<p>わたしたちはまずアプリケーションの中心となる重要な概念を理解し、そうでない概念は後追いで理解していくからです。</p>
+<p>ところで、日本には多くの市があります。政府統計によると 2024 年時点で 792 の市があります<sup><a href='#maki-fn1' id="maki-ref1">1</a></sup>。</p>
+<p>ここで Google マップを開いてみましょう。数度ズームアウトすると日本の全体像が現れます。「東京」「大阪」「札幌」という都市が表示され、これらが重要な都市として扱われていることがわかります。ズームインすると次に重要な都市と幹線道路が現れます。</p>
+<p>Google マップのようにズームイン・ズームアウトで重要なモデルとリレーション（つまり ER 図ですね）を見られるとそれは Rails アプリケーションの「地図」になるのではないでしょうか。そんな Gem を作っている話をします。</p>
+<p id="maki-fn1"><a href="#maki-ref1">[1]</a>: <a href="https://www.e-stat.go.jp/municipalities/number-of-municipalities">https://www.e-stat.go.jp/municipalities/number-of-municipalities</a></p>
