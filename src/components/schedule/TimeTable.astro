@@ -44,18 +44,21 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
         }
 
         table {
+          border-spacing: 0;
+
           border-top-left-radius: 24px;
           border-top-right-radius: 24px;
-          border-top: 1px solid #AEAEB2;
-          border-right: 1px solid #AEAEB2;
-          border-left: 1px solid #AEAEB2;
 
           thead tr:first-child th:first-child {
             border-top-left-radius: 24px;
-            border-right: 1px solid #AEAEB2;
           }
           thead tr:first-child th:last-child {
             border-top-right-radius: 24px;
+            border-right: 1px solid #AEAEB2;
+          }
+
+          th {
+            border-top: 1px solid #AEAEB2;
             border-left: 1px solid #AEAEB2;
           }
         }
@@ -82,9 +85,6 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
       }
 
       table {
-        width: 100%;
-        min-width: 1028px;
-
         border-spacing: 0;
 
         .tt-no-left-line {
@@ -105,7 +105,7 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
           padding: 24px;
         }
 
-        th {
+        .tt-4, .tt-3 {
           font-family: "Futura", "Jost", sans-serif;
           font-size: 20px;
           font-weight: 500;
@@ -115,24 +115,11 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
           padding: 24px;
         }
 
-        .corner{
+        .corner {
           background-color: #fff;
           color: #fff;
-        }
-      }
-      @media screen and (width <= 720px) {
-        table {
-          min-width: 688px;
-        }
-      }
-      @media screen and (width <= 520px) {
-        table {
-          min-width: 488px;
-        }
-      }
-      @media screen and (width <= 320px) {
-        table {
-          min-width: 320px;
+
+          padding: 24px;
         }
       }
 
@@ -154,7 +141,6 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
         text-align: center;
 
         white-space: nowrap;
-        width: 1%;
       }
 
       .tt-event {
@@ -164,8 +150,60 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
         text-align: left;
       }
 
-      .tt-4, .tt-3, .tt-event, .tt-talk {
-        width: 50%;
+      .tt-4, .tt-3 {
+        white-space: nowrap;
+      }
+
+      table {
+        width: 100%;
+        min-width: 1100px;
+
+        .tt-time, .tt-timerange, .corner {
+          width: 100px;
+        }
+
+        .tt-4, .tt-3, .tt-event, .tt-talk {
+          width: 500px;
+        }
+      }
+      @media screen and (width <= 720px) {
+        table {
+          min-width: 800px;
+
+          .tt-time, .tt-timerange, .corner {
+            width: 100px;
+          }
+
+          .tt-4, .tt-3, .tt-event, .tt-talk {
+            width: 350px;
+          }
+        }
+      }
+      @media screen and (width <= 520px) {
+        table {
+          min-width: 500px;
+
+          .tt-time, .tt-timerange, .corner {
+            width: 50px;
+          }
+
+          .tt-4, .tt-3, .tt-event, .tt-talk {
+            width: 200px;
+          }
+        }
+      }
+      @media screen and (width <= 320px) {
+        table {
+          min-width: 350px;
+
+          .tt-time, .tt-timerange, .corner {
+            width: 50px;
+          }
+
+          .tt-4, .tt-3, .tt-event, .tt-talk {
+            width: 150px;
+          }
+        }
       }
     }
   }
@@ -178,7 +216,7 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
         <table>
           <thead>
             <tr>
-              <th class="tt-time corner">00:00</th>
+              <th class="corner tt-time">00:00</th>
               <th class="tt-4">4F Hall</th>
               <th class="tt-3">3F Gallery</th>
             </tr>
@@ -194,19 +232,15 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
               <td class="tt-no-left-line"/>
             </tr>
             <tr>
-              <td class="tt-timerange">
+              <td class="tt-time">
                 <p>11:00</p>
-                <p>-</p>
-                <p>11:10</p>
               </td>
               <td class="tt-event">Opening</td>
               <td class="tt-event" />
             </tr>
             <tr>
-              <td class="tt-timerange">
+              <td class="tt-time">
                 <p>11:10</p>
-                <p>-</p>
-                <p>11:50</p>
               </td>
               <td class="tt-talk">
                 <Talk talks={talks} id={23}/>
@@ -223,10 +257,8 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
               <td class="tt-no-left-line" />
             </tr>
             <tr>
-              <td class="tt-timerange">
+              <td class="tt-time">
                 <p>13:10</p>
-                <p>-</p>
-                <p>13:30</p>
               </td>
               <td class="tt-talk">
                 <Talk talks={talks} id={11}/>
@@ -236,10 +268,8 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
               </td>
             </tr>
             <tr>
-              <td class="tt-timerange">
+              <td class="tt-time">
                 <p>13:35</p>
-                <p>-</p>
-                <p>13:55</p>
               </td>
               <td class="tt-talk">
                 <Talk talks={talks} id={15}/>
@@ -249,10 +279,8 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
               </td>
             </tr>
             <tr>
-              <td class="tt-timerange">
+              <td class="tt-time">
                 <p>14:00</p>
-                <p>-</p>
-                <p>14:30</p>
               </td>
               <td class="tt-talk">
                 <Talk talks={talks} id={19}/>
@@ -267,14 +295,12 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
                 <p>-</p>
                 <p>15:00</p>
               </td>
-              <td class="tt-event">Break</td>
+              <td class="tt-event">Long Break</td>
               <td class="tt-no-left-line" />
             </tr>
             <tr>
-              <td class="tt-timerange">
+              <td class="tt-time">
                 <p>15:00</p>
-                <p>-</p>
-                <p>15:20</p>
               </td>
               <td class="tt-talk">
                 <Talk talks={talks} id={14}/>
@@ -284,10 +310,8 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
               </td>
             </tr>
             <tr>
-              <td class="tt-timerange">
+              <td class="tt-time">
                 <p>15:25</p>
-                <p>-</p>
-                <p>15:45</p>
               </td>
               <td class="tt-talk">
                 <Talk talks={talks} id={18}/>
@@ -297,10 +321,8 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
               </td>
             </tr>
             <tr>
-              <td class="tt-timerange">
+              <td class="tt-time">
                 <p>15:50</p>
-                <p>-</p>
-                <p>16:30</p>
               </td>
               <td class="tt-talk">
                 <Talk talks={talks} id={21}/>
@@ -313,14 +335,12 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
                 <p>-</p>
                 <p>16:50</p>
               </td>
-              <td class="tt-event">Break</td>
+              <td class="tt-event">Long Break</td>
               <td class="tt-no-left-line" />
             </tr>
             <tr>
-              <td class="tt-timerange">
+              <td class="tt-time">
                 <p>16:50</p>
-                <p>-</p>
-                <p>17:45</p>
               </td>
               <td class="tt-talk">
                 <Talk talks={talks} id={22}/>
@@ -328,10 +348,8 @@ const talks = talkEntries.filter((entry) => entry.data.session.id > 10).map((ent
               <td class="tt-event" />
             </tr>
             <tr>
-              <td class="tt-timerange">
+              <td class="tt-time">
                 <p>17:50</p>
-                <p>-</p>
-                <p>18:15</p>
               </td>
               <td class="tt-event">Closing</td>
               <td class="tt-event" />
