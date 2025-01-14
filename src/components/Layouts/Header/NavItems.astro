@@ -23,7 +23,7 @@ const { mobile } = Astro.props;
     list-style-type: none;
     font-size: 16px;
   }
-  @media screen and (width <= 700px) {
+  @media screen and (width <= 720px) {
     nav ul {
       gap: 12px;
     }
@@ -40,12 +40,12 @@ const { mobile } = Astro.props;
 </style>
 
 <ul class="navitems">
-  <li>
-    <a href={`${import.meta.env.BASE_URL}/talks`}>Talks</a>
-  </li>
   <!-- <li>
-    <a href={`${import.meta.env.BASE_URL}/schedule/`}>Schedule</a>
+    <a href={`${import.meta.env.BASE_URL}/talks`}>Talks</a>
   </li> -->
+  <li>
+    <a href={`${import.meta.env.BASE_URL}/schedule/`}>Schedule</a>
+  </li>
   <li>
     <a href={`${import.meta.env.BASE_URL}/news/`}>News</a>
   </li>

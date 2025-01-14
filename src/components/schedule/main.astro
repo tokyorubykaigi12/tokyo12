@@ -1,0 +1,15 @@
+---
+// Astro
+import Panel from "../Layouts/Panel.astro";
+import TimeTable from "./TimeTable.astro";
+import Zenyasai from "./Zenyasai.astro";
+// tsx
+import TabToggle from "./TabToggle";
+---
+
+<Panel title="Schedule">
+  <TabToggle client:only main zenyasai >
+    <TimeTable slot="main" />
+    <Zenyasai slot="zenyasai"/>
+  </TabToggle>
+</Panel>
