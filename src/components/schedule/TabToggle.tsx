@@ -1,8 +1,16 @@
+import type { ComponentChildren, FunctionComponent } from 'preact';
 import {useStore} from '@nanostores/preact';
-import {selectedTabStore, type Tab} from './tabStore';
+import { selectedTabStore, type Tab } from './tabStore';
 import './TabToggle.css';
 
-export default function Tabs() {
+// for astro syntax
+type Props = {
+  'client:only': boolean;
+  main: ComponentChildren;
+  zenyasai: ComponentChildren;
+}
+
+const Schedule:FunctionComponent<Props> = (props) => {
   const $tab = useStore(selectedTabStore);
 
   const isSelected = (tabName: Tab) => {
@@ -31,6 +39,13 @@ export default function Tabs() {
           2025.1.18
         </button>
       </div>
+      {$tab === 'sat' ? (
+        <>{props.main}</>
+      ) : (
+        <>{props.zenyasai}</>
+      )}
     </>
-  );
+  )
 }
+
+export default Schedule;
