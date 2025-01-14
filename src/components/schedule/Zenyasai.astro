@@ -10,7 +10,7 @@ import ArrowUpRightFromSquare from '../icons/arrow-up-right-from-square.svg';
 const talkEntries = await getCollection("talks");
 
 talkEntries.filter((entry)=>entry.data.session.id === 1)[0].data.speaker.ImageSrc = OkuramasafumiImage.src;
-const talks = talkEntries.filter((entry) => entry.data.session.id <= 10).map((entry)=>{
+const talks = talkEntries.filter((entry) => entry.data.session.id <= 10 || entry.data.session.id === 24).map((entry)=>{
   return {
     session: entry.data.session,
     speaker: entry.data.speaker,
@@ -204,7 +204,9 @@ const talks = talkEntries.filter((entry) => entry.data.session.id <= 10).map((en
       <tbody>
         <tr>
           <td class="tt-time">16:00</td>
-          <td class="tt-event">クリエイティブコーディングワークショップ</td>
+          <td class="tt-event">
+            <Talk talks={talks} id={24}/>
+          </td>
         </tr>
         <tr>
           <td class="tt-time">17:45</td>
