@@ -4,12 +4,22 @@ import Panel from "../components/Layouts/Panel.astro";
 import Member from "../components/staff/Member.astro";
 
 import OkuramasafumiImage from "../components/staff/pics/okuramasafumi.jpg";
+import TdakakImage from "../components/staff/pics/tdakak.jpg";
+import HiroteaImage from "../components/staff/pics/hirotea.jpg";
 
 const title = "スタッフ | 東京Ruby会議12";
 const twitter_card = "summary_large_image";
 ---
 
 <style>
+  h3 {
+    font-family: "Futura", "Jost", sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 43px;
+    margin-bottom: 24px;
+  }
+
   .container {
     display: flex;
     flex-wrap: wrap;
@@ -18,7 +28,8 @@ const twitter_card = "summary_large_image";
 </style>
 
 <Layout title={title} twitter_card={twitter_card}>
-  <Panel title="Organizers" subtitle="実行委員">
+  <Panel title="Staff">
+    <h3>Organizers</h3>
     <div class="container">
       <Member
         label="Chief Organizer"
@@ -69,6 +80,68 @@ const twitter_card = "summary_large_image";
         ImageSrc={OkuramasafumiImage.src}
       />
     </div>
+    <h3>Helpers</h3>
+    <div class="container">
+      <Member
+        name="Tomoya Chiba"
+        xID="nemunemu3desu"
+        githubID="tomoasleep"
+        md5Email="c3ddc2fb6aad352cdfacc5a0c6d784c7"
+      />
+      <Member
+        name="polamjag"
+        xID="polamjag"
+        githubID="polamjag"
+        md5Email="f9fa9b6225d62d8c0559e993906ca4f5"
+      />
+      <Member
+        name="Koji Nakamura"
+        xID="kozy4324"
+        githubID="kozy4324"
+        md5Email="41a3b3d39a9f1f097eeca98e90622576"
+      />
+      <Member
+        name="Kaoru Endo"
+        xID="aiandrox"
+        githubID="aiandrox"
+        md5Email="43d7033f39dd4922f0936a42182c1291"
+      />
+      <Member
+        name="Naohisa Yokoyama"
+        xID="_shrrk"
+        githubID="nhsykym"
+        md5Email="2e9f17022d0698764d2b141065de6d8f"
+      />
+      <Member
+        name="ただあき"
+        xID="tdakak"
+        ImageSrc={TdakakImage.src}
+      />
+      <Member
+        name="Taiga Muraoka"
+        githubID="muraoka"
+        md5Email="3d0cfebb94a574828929e0b4048ea3f9"
+      />
+      <Member
+        name="Shogo Terai"
+        xID="krpk1900_dev"
+        githubID="krpk1900"
+        md5Email="e05c5bb6ec6456ba8d7c5b83e5dd5cb4"
+      />
+      <Member
+        name="hirotea"
+        xID="nifuchi222222"
+        ImageSrc={HiroteaImage.src}
+      />
+    </div>
+    <h3>Support</h3>
+    <div class="container">
+      <Member
+        name="日本Rubyの会"
+        otherUrl="https://ruby-no-kai.org/"
+        ImageSrc="https://gyazo.com/fa3bc8419cb3ac3fe9c05490d3ab354f.png"
+        isrubynokai={true}
+      />
+    </div>
   </Panel>
-  <!-- <Panel title="Helper" subtitle="ヘルパー"></Panel> -->
 </Layout>
