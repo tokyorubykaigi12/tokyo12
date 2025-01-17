@@ -19,8 +19,8 @@ talkEntries.filter((entry)=>entry.data.session.id === 21)[0].data.speaker.ImageS
 talkEntries.filter((entry)=>entry.data.session.id === 22)[0].data.speaker.ImageSrc = EagletmtImage.src;
 talkEntries.filter((entry)=>entry.data.session.id === 23)[0].data.speaker.ImageSrc = JhawthornImage.src;
 
-const mainTalkEntries = talkEntries.filter((entry) => entry.data.session.id > 10);
-const zenyasaiTalkEntries = talkEntries.filter((entry) => entry.data.session.id <= 10);
+const mainTalkEntries = talkEntries.filter((entry) => entry.data.session.id > 10 && entry.data.session.id !== 24);
+const zenyasaiTalkEntries = talkEntries.filter((entry) => entry.data.session.id <= 10 || entry.data.session.id === 24);
 
 const sortedMainTalkEntries = mainTalkEntries.sort((a, b) => a.data.session.id - b.data.session.id);
 const sortedZenyasaiTalkEntries = zenyasaiTalkEntries.sort((a, b) => a.data.session.id - b.data.session.id);
