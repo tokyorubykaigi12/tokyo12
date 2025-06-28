@@ -1,7 +1,4 @@
 ---
-import TicketButtonBefore from "./TicketButtonBefore.astro";
-import TicketButtonSelling from "./TicketButtonSelling.astro";
-
 import PrimaryLogoWhiteImage from "../../imgs/primary_logo_white.png";
 import TriImage from "../../imgs/tri.png";
 import PinIcon from "../icons/pin_white.svg";
@@ -185,7 +182,6 @@ function isTicketOpen(): boolean {
         </a>
       </div>
     </div>
-    {isTicketOpen() ? <TicketButtonSelling /> : <TicketButtonBefore />}
     <div>
       <img src={TriImage.src} alt="" />
     </div>
